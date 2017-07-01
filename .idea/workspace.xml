@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2c18d8e9-ca55-4c88-9828-5c1c07f9cf53" name="Default" comment="" />
+=======
+    <list default="true" id="f957e627-4be8-42d6-b7ba-93a5867d8ee0" name="Default" comment="" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,6 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/FYP$validateInstallation.coverage" NAME="validateInstallation Coverage Results" MODIFIED="1498885171509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FYP$create_tfrecord.coverage" NAME="create_tfrecord Coverage Results" MODIFIED="1498886055222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/create_tfrecords" />
   </component>
@@ -26,13 +31,23 @@
   <component name="FavoritesManager">
     <favorites_list name="FYP" />
   </component>
+=======
+    <SUITE FILE_PATH="coverage/FYP$convert_tiff_to_jpeg.coverage" NAME="convert_tiff_to_jpeg Coverage Results" MODIFIED="1498842745524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Lenet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lenet.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="60">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+=======
+            <state relative-caret-position="340">
+              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -40,26 +55,46 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="build_image_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build_image_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1360">
               <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
               <folding />
+=======
+      <file leaf-file-name="build_image_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build_image_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="387" column="42" lean-forward="false" selection-start-line="387" selection-start-column="42" selection-end-line="387" selection-end-column="42" />
+              <folding>
+                <element signature="e#2500#2538#0" expanded="true" />
+              </folding>
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="image_labeling.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_labeling.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37960">
+              <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="create_tfrecord.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,11 +102,21 @@
               <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+=======
+      <file leaf-file-name="convert_tiff_to_jpeg.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="validateInstallation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validateInstallation.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,21 +132,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19580">
+              <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="flags.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/flags.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1300">
               <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+=======
+      <file leaf-file-name="os.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python3.4/os.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5800">
+              <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="dataset_utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create_tfrecords/dataset_utils.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,6 +187,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -135,6 +198,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -148,6 +212,16 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/create_tfrecords/dataset_utils.py" />
         <option value="$PROJECT_DIR$/create_tfrecords/create_tfrecord.py" />
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Lenet.pu.py" />
+        <option value="$PROJECT_DIR$/Lenet.py" />
+        <option value="$PROJECT_DIR$/build_image_data.py" />
+        <option value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg" />
+        <option value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       </list>
     </option>
   </component>
@@ -163,7 +237,10 @@
     <option name="width" value="927" />
     <option name="height" value="1056" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -179,7 +256,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -189,6 +269,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.4.3 (/usr/bin/python3.4) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <option name="myItemId" value="FYP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -203,12 +300,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="create_tfrecords" />
+=======
+              <option name="myItemId" value="Dataset" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,6 +332,14 @@
         </option>
       </console-settings>
     </option>
+=======
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,6 +353,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.create_tfrecord">
     <configuration default="false" name="validateInstallation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,20 +376,34 @@
       <method />
     </configuration>
     <configuration default="false" name="create_tfrecord" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager" selected="Python.convert_tiff_to_jpeg">
+    <configuration default="false" name="convert_tiff_to_jpeg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+<<<<<<< HEAD
         <env name="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64:$LD_LIBRARY_PATH" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/create_tfrecords" />
+=======
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FYP" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_tfrecords/create_tfrecord.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -353,9 +478,14 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+<<<<<<< HEAD
         <env name="LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" value="" />
       </envs>
       <option name="SDK_HOME" value="/usr/bin/python3.4" />
+=======
+      </envs>
+      <option name="SDK_HOME" value="" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -433,6 +563,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.validateInstallation" />
       <item index="1" class="java.lang.String" itemvalue="Python.create_tfrecord" />
@@ -441,6 +572,14 @@
       <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Python.create_tfrecord" />
         <item index="1" class="java.lang.String" itemvalue="Python.validateInstallation" />
+=======
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.convert_tiff_to_jpeg" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.convert_tiff_to_jpeg" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       </list>
     </recent_temporary>
   </component>
@@ -449,6 +588,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="2c18d8e9-ca55-4c88-9828-5c1c07f9cf53" name="Default" comment="" />
       <created>1498878665320</created>
       <option name="number" value="Default" />
@@ -478,6 +618,29 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35257083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3105981" sideWeight="0.83279395" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <changelist id="f957e627-4be8-42d6-b7ba-93a5867d8ee0" name="Default" comment="" />
+      <created>1498837952071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498837952071</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="992" y="24" width="927" height="1056" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.005393743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -493,6 +656,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -532,6 +696,11 @@
       <path value="$PROJECT_DIR$/create_tfrecords" />
     </ignored-roots>
   </component>
+=======
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -539,14 +708,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Lenet.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+=======
+        <state relative-caret-position="340">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/build_image_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
@@ -567,10 +742,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+=======
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37960">
+          <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create_tfrecords/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -601,12 +783,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+=======
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="980">
@@ -631,18 +820,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+=======
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19580">
+          <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/image_labeling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file:///usr/lib/python3.4/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5800">
+          <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -689,44 +892,80 @@
           <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/build_image_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7960">
+          <caret line="409" column="14" lean-forward="false" selection-start-line="409" selection-start-column="14" selection-end-line="409" selection-end-column="14" />
+          <folding>
+            <element signature="e#2500#2538#0" expanded="true" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lenet.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+=======
+        <state relative-caret-position="340">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/image_labeling.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file:///usr/lib/python3.4/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5800">
+          <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/flags.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+=======
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19580">
+          <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/build_image_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+=======
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg" />
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37960">
+          <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create_tfrecords/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -763,16 +1002,33 @@
           <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="523">
           <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/build_image_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="387" column="42" lean-forward="false" selection-start-line="387" selection-start-column="42" selection-end-line="387" selection-end-column="42" />
+          <folding>
+            <element signature="e#2500#2538#0" expanded="true" />
+>>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
           </folding>
         </state>
       </provider>
