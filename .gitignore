@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEA
+.idea/*
+
+# Data
+Dataset/*
+Tutorial/=/*
+Tutorial/MNIST_data/*
+
+
+

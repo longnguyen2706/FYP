@@ -1,0 +1,5 @@
+0:giantin
+1:hoechst
+2:lamp2
+3:nop4
+4:tubulin
