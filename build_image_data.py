@@ -64,12 +64,12 @@ import threading
 import numpy as np
 import tensorflow as tf
 
+
 tf.app.flags.DEFINE_string('train_directory', '/tmp/',
                            'Training data directory')
 tf.app.flags.DEFINE_string('validation_directory', '/tmp/',
                            'Validation data directory')
-tf.app.flags.DEFINE_string('output_directory', '/tmp/',
-                           'Output data directory')
+tf.app.flags.DEFINE_string('output_directory', '/tmp/', 'Output data directory')
 
 tf.app.flags.DEFINE_integer('train_shards', 2,
                             'Number of shards in training TFRecord files.')
@@ -86,6 +86,7 @@ tf.app.flags.DEFINE_integer('num_threads', 2,
 #   flower
 # where each line corresponds to a label. We map each label contained in
 # the file to an integer corresponding to the line number starting from 0.
+
 tf.app.flags.DEFINE_string('labels_file', '', 'Labels file')
 
 

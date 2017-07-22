@@ -1,6 +1,11 @@
 import math
 import os
 import sys
+<<<<<<< HEAD
+=======
+
+import PIL
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
 import tensorflow as tf
 
 slim = tf.contrib.slim
@@ -11,10 +16,15 @@ LABELS_FILENAME = 'labels.txt'
 
 def int64_feature(values):
   """Returns a TF-Feature of int64s.
+<<<<<<< HEAD
 
   Args:
     values: A scalar or list of values.
 
+=======
+  Args:
+    values: A scalar or list of values.
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Returns:
     a TF-Feature.
   """
@@ -25,10 +35,15 @@ def int64_feature(values):
 
 def bytes_feature(values):
   """Returns a TF-Feature of bytes.
+<<<<<<< HEAD
 
   Args:
     values: A string.
 
+=======
+  Args:
+    values: A string.
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Returns:
     a TF-Feature.
   """
@@ -47,7 +62,10 @@ def image_to_tfexample(image_data, image_format, height, width, class_id):
 def write_label_file(labels_to_class_names, dataset_dir,
                      filename=LABELS_FILENAME):
   """Writes a file with the list of class names.
+<<<<<<< HEAD
 
+=======
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Args:
     labels_to_class_names: A map of (integer) labels to class names.
     dataset_dir: The directory in which the labels file should be written.
@@ -62,11 +80,17 @@ def write_label_file(labels_to_class_names, dataset_dir,
 
 def has_labels(dataset_dir, filename=LABELS_FILENAME):
   """Specifies whether or not the dataset directory contains a label map file.
+<<<<<<< HEAD
 
   Args:
     dataset_dir: The directory in which the labels file is found.
     filename: The filename where the class names are written.
 
+=======
+  Args:
+    dataset_dir: The directory in which the labels file is found.
+    filename: The filename where the class names are written.
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Returns:
     `True` if the labels file exists and `False` otherwise.
   """
@@ -75,11 +99,17 @@ def has_labels(dataset_dir, filename=LABELS_FILENAME):
 
 def read_label_file(dataset_dir, filename=LABELS_FILENAME):
   """Reads the labels file and returns a mapping from ID to class name.
+<<<<<<< HEAD
 
   Args:
     dataset_dir: The directory in which the labels file is found.
     filename: The filename where the class names are written.
 
+=======
+  Args:
+    dataset_dir: The directory in which the labels file is found.
+    filename: The filename where the class names are written.
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Returns:
     A map from a label (integer) to class name.
   """
@@ -120,11 +150,17 @@ class ImageReader(object):
 
 def _get_filenames_and_classes(dataset_dir):
   """Returns a list of filenames and inferred class names.
+<<<<<<< HEAD
 
   Args:
     dataset_dir: A directory containing a set of subdirectories representing
       class names. Each subdirectory should contain PNG or JPG encoded images.
 
+=======
+  Args:
+    dataset_dir: A directory containing a set of subdirectories representing
+      class names. Each subdirectory should contain PNG or JPG encoded images.
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Returns:
     A list of image file paths, relative to `dataset_dir` and the list of
     subdirectories, representing class names.
@@ -163,7 +199,10 @@ def _get_dataset_filename(dataset_dir, split_name, shard_id, tfrecord_filename, 
 
 def _convert_dataset(split_name, filenames, class_names_to_ids, dataset_dir, tfrecord_filename, _NUM_SHARDS):
   """Converts the given filenames to a TFRecord dataset.
+<<<<<<< HEAD
 
+=======
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780
   Args:
     split_name: The name of the dataset, either 'train' or 'validation'.
     filenames: A list of absolute paths to png or jpg images.
@@ -214,3 +253,8 @@ def _dataset_exists(dataset_dir, _NUM_SHARDS, output_filename):
       if not tf.gfile.Exists(tfrecord_filename):
         return False
   return True
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a227172f9246c58a6d984883c337639b62aec780

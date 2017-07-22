@@ -10,13 +10,14 @@ A simpler way of preparing large-scale image dataset by generalizing functions f
 ### Usage
 
     $python create_tfrecord.py --dataset_dir=/path/to/dataset/ --tfrecord_filename=dataset_name
-    
+
     #Example: python create_tfrecord.py --dataset_dir=/path/to/flowers --tfrecord_filename=flowers
     #Note that the dataset_dir should be the folder that contains the root directory and not the root directory itself.
 
 ### Arguments
 
 #### Required arguments:
+
 
 - dataset_dir (string): The directory to your dataset that is arranged in a structured way where your subdirectories keep classes of your images. 
 
@@ -36,7 +37,7 @@ For example:
                 ....jpg
             daisy\
                 ....jpg
-   
+
   Note: Your dataset_dir should be /path/to/flowers and not /path/to/flowers/flowers_photos
 
 - tfrecord_filename (string): The output name of your TFRecord files.
