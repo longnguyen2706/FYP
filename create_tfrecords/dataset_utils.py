@@ -1,6 +1,8 @@
 import math
 import os
 import sys
+
+import PIL
 import tensorflow as tf
 
 slim = tf.contrib.slim
@@ -202,4 +204,5 @@ def _dataset_exists(dataset_dir, _NUM_SHARDS, output_filename):
       if not tf.gfile.Exists(tfrecord_filename):
         return False
   return True
+
 
