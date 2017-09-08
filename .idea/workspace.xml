@@ -4,11 +4,7 @@
     <bookmark url="file://$USER_HOME$/image_retraining/retrain.py" line="1338" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FYP.iml" afterPath="$PROJECT_DIR$/.idea/FYP.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tutorial/mnist.py" afterPath="$PROJECT_DIR$/Tutorial/mnist.py" />
-    </list>
+    <list default="true" id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.17088948">
+    <splitter split-orientation="horizontal" split-proportion="0.23450135">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="convert_tiff_to_jpeg.py" pinned="false" current-in-tab="false">
@@ -41,10 +37,9 @@
                   <caret line="735" column="4" lean-forward="false" selection-start-line="735" selection-start-column="4" selection-end-line="735" selection-end-column="4" />
                   <folding>
                     <element signature="e#3585#3623#0" expanded="true" />
-                    <marker date="1504775943382" expanded="true" signature="5501:8118" ph="..." />
-                    <marker date="1504775943382" expanded="true" signature="32637:32984" ph="..." />
-                    <marker date="1504775943382" expanded="true" signature="35156:35248" ph="..." />
-                    <marker date="1504775943382" expanded="true" signature="44226:44308" ph="..." />
+                    <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+                    <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+                    <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -62,7 +57,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="deep_mnist.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="deep_mnist.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="2016">
@@ -82,6 +77,16 @@
                   <folding>
                     <element signature="e#0#38#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="transfer_learning.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/image_retraining/transfer_learning.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -106,16 +111,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-            <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="32256">
-                  <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="ntpath.py" pinned="false" current-in-tab="false">
             <entry file="file:///usr/lib/python3.4/ntpath.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -126,7 +121,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="transfer_learning_nn.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="transfer_learning_nn.py" pinned="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
@@ -140,28 +135,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="transfer_learning_nn.py" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="retrain.py" pinned="false" current-in-tab="true">
-            <entry file="file://$USER_HOME$/image_retraining/retrain.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="7847">
-                  <caret line="484" column="4" lean-forward="false" selection-start-line="484" selection-start-column="4" selection-end-line="484" selection-end-column="4" />
-                  <folding>
-                    <element signature="e#3585#3623#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="image_ops.py" pinned="false" current-in-tab="false">
             <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/image_ops.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -194,6 +167,21 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="retrain.py" pinned="false" current-in-tab="true">
+            <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="14784">
+                  <caret line="722" column="26" lean-forward="false" selection-start-line="722" selection-start-column="26" selection-end-line="722" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#3585#3623#0" expanded="true" />
+                    <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+                    <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+                    <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -219,6 +207,7 @@
       <find>validation</find>
       <find>add_final_training_ops</find>
       <find>ADD_FINAL</find>
+      <find>learn</find>
       <find>create_image_lists</find>
     </findStrings>
   </component>
@@ -233,6 +222,7 @@
         <option value="$USER_HOME$/image_retraining/transfer_learning_nn.py" />
         <option value="$PROJECT_DIR$/Tutorial/deep_mnist.py" />
         <option value="$USER_HOME$/image_retraining/retrain.py" />
+        <option value="$USER_HOME$/image_retraining/transfer_learning.py" />
       </list>
     </option>
   </component>
@@ -268,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,6 +328,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -550,9 +540,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24474393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24474393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -560,7 +549,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39959225" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -598,14 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32256">
-          <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.4/ntpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5019">
@@ -654,6 +635,9 @@
           <caret line="734" column="4" lean-forward="false" selection-start-line="734" selection-start-column="4" selection-end-line="734" selection-end-column="4" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
@@ -758,6 +742,9 @@
           <caret line="734" column="4" lean-forward="false" selection-start-line="734" selection-start-column="4" selection-end-line="734" selection-end-column="4" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
@@ -816,6 +803,9 @@
           <caret line="838" column="27" lean-forward="false" selection-start-line="838" selection-start-column="22" selection-end-line="838" selection-end-column="27" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
@@ -866,6 +856,9 @@
           <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
@@ -884,6 +877,9 @@
           <caret line="1305" column="23" lean-forward="false" selection-start-line="1305" selection-start-column="7" selection-end-line="1305" selection-end-column="24" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
@@ -959,14 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-1247971765/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-186">
@@ -1004,6 +992,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="284" column="4" lean-forward="false" selection-start-line="284" selection-start-column="4" selection-end-line="284" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/image_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1092">
@@ -1014,20 +1026,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="284" column="4" lean-forward="false" selection-start-line="284" selection-start-column="4" selection-end-line="284" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/image_retraining/retrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7847">
-          <caret line="484" column="4" lean-forward="false" selection-start-line="484" selection-start-column="4" selection-end-line="484" selection-end-column="4" />
+        <state relative-caret-position="14784">
+          <caret line="722" column="26" lean-forward="false" selection-start-line="722" selection-start-column="26" selection-end-line="722" selection-end-column="26" />
           <folding>
             <element signature="e#3585#3623#0" expanded="true" />
+            <marker date="1504849720294" expanded="true" signature="32635:32982" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="35154:35246" ph="..." />
+            <marker date="1504849720294" expanded="true" signature="44224:44306" ph="..." />
           </folding>
         </state>
       </provider>
