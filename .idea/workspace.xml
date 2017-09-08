@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$USER_HOME$/image_retraining/retrain.py" line="1338" />
+  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="2c18d8e9-ca55-4c88-9828-5c1c07f9cf53" name="Default" comment="" />
-=======
-    <list default="true" id="f957e627-4be8-42d6-b7ba-93a5867d8ee0" name="Default" comment="" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+    <list default="true" id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FYP.iml" afterPath="$PROJECT_DIR$/.idea/FYP.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tutorial/mnist.py" afterPath="$PROJECT_DIR$/Tutorial/mnist.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,182 +17,186 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/FYP$validateInstallation.coverage" NAME="validateInstallation Coverage Results" MODIFIED="1498885171509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FYP$create_tfrecord.coverage" NAME="create_tfrecord Coverage Results" MODIFIED="1498886055222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/create_tfrecords" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <SUITE FILE_PATH="coverage/FYP$transfer_learning_nn.coverage" NAME="transfer_learning_nn Coverage Results" MODIFIED="1503304611223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/image_retraining" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="FYP" />
-  </component>
-=======
-    <SUITE FILE_PATH="coverage/FYP$convert_tiff_to_jpeg.coverage" NAME="convert_tiff_to_jpeg Coverage Results" MODIFIED="1498842745524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Lenet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lenet.py">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
-            <state relative-caret-position="340">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="build_image_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build_image_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-              <folding />
-=======
-      <file leaf-file-name="build_image_data.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build_image_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="387" column="42" lean-forward="false" selection-start-line="387" selection-start-column="42" selection-end-line="387" selection-end-column="42" />
-              <folding>
-                <element signature="e#2500#2538#0" expanded="true" />
-              </folding>
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="image_labeling.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image_labeling.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37960">
-              <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="create_tfrecord.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-=======
-      <file leaf-file-name="convert_tiff_to_jpeg.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="validateInstallation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/validateInstallation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_tfrecords/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19580">
-              <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="flags.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/flags.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
-              <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-=======
-      <file leaf-file-name="os.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.4/os.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5800">
-              <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="dataset_utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_tfrecords/dataset_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3940">
-              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="convert_tiff_to_jpeg.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-=======
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.17088948">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="convert_tiff_to_jpeg.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="retrain.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8841">
+                  <caret line="735" column="4" lean-forward="false" selection-start-line="735" selection-start-column="4" selection-end-line="735" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#3585#3623#0" expanded="true" />
+                    <marker date="1504775943382" expanded="true" signature="5501:8118" ph="..." />
+                    <marker date="1504775943382" expanded="true" signature="32637:32984" ph="..." />
+                    <marker date="1504775943382" expanded="true" signature="35156:35248" ph="..." />
+                    <marker date="1504775943382" expanded="true" signature="44226:44308" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Lenet.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Lenet.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="deep_mnist.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2016">
+                  <caret line="96" column="61" lean-forward="false" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="61" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CNN_tutorial.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Tutorial/CNN_tutorial.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1869">
+                  <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="convert_png_to_jpeg.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Dataset/convert_png_to_jpeg.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="525">
+                  <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="convert_png_to_jpeg.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="32256">
+                  <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ntpath.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/lib/python3.4/ntpath.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5019">
+                  <caret line="243" column="4" lean-forward="false" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="transfer_learning_nn.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="transfer_learning_nn.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="462">
+                  <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="retrain.py" pinned="false" current-in-tab="true">
+            <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="7847">
+                  <caret line="484" column="4" lean-forward="false" selection-start-line="484" selection-start-column="4" selection-end-line="484" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#3585#3623#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="image_ops.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/image_ops.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1092">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1587#1625#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/app.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="840">
+                  <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="file_io.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/lib/io/file_io.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="9765">
+                  <caret line="477" column="4" lean-forward="false" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -198,30 +205,34 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>jpg</find>
+      <find>tensorboard</find>
+      <find>flip</find>
+      <find>FLAGS</find>
+      <find>add_input_distortions</find>
+      <find>get_random_distorted_bottlenecks</find>
+      <find>train_batch_size</find>
+      <find>add_</find>
+      <find>cross</find>
+      <find>validation</find>
+      <find>add_final_training_ops</find>
+      <find>ADD_FINAL</find>
+      <find>create_image_lists</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/image_labeling.py" />
-        <option value="$PROJECT_DIR$/create_tfrecords/init.py" />
-        <option value="$PROJECT_DIR$/tes.py" />
-        <option value="$PROJECT_DIR$/validateInstallation.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/create_tfrecords/dataset_utils.py" />
-        <option value="$PROJECT_DIR$/create_tfrecords/create_tfrecord.py" />
-=======
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Lenet.pu.py" />
-        <option value="$PROJECT_DIR$/Lenet.py" />
-        <option value="$PROJECT_DIR$/build_image_data.py" />
-        <option value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg" />
-        <option value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <option value="$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py" />
+        <option value="$PROJECT_DIR$/Dataset/convert_png_to_jpeg.py" />
+        <option value="$USER_HOME$/image_retraining/transfer_learning_nn.py" />
+        <option value="$PROJECT_DIR$/Tutorial/deep_mnist.py" />
+        <option value="$USER_HOME$/image_retraining/retrain.py" />
       </list>
     </option>
   </component>
@@ -231,16 +242,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="992" />
-    <option name="y" value="24" />
-    <option name="width" value="927" />
-    <option name="height" value="1056" />
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
-<<<<<<< HEAD
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-=======
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+  <component name="ProjectFrameBounds">
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -256,10 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-      <pane id="Scope" />
-=======
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -269,23 +277,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-=======
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Python 3.4.3 (/usr/bin/python3.4) &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FYP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
               <option name="myItemId" value="FYP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -300,46 +291,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-<<<<<<< HEAD
-              <option name="myItemId" value="create_tfrecords" />
-=======
+              <option name="myItemId" value="Tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MNIST_data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Dataset" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FYP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-<<<<<<< HEAD
-    </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings module-name="FYP" is-module-sdk="true">
-        <envs>
-          <env key="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64/" />
-        </envs>
-        <option name="myUseModuleSdk" value="true" />
-        <option name="myModuleName" value="FYP" />
-        <option name="myEnvs">
-          <map>
-            <entry key="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64/" />
-          </map>
-        </option>
-      </console-settings>
-    </option>
-=======
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="WebServerToolWindowFactoryState" value="false" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+    <property name="last_opened_file_path" value="$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -353,58 +358,22 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Python.create_tfrecord">
-    <configuration default="false" name="validateInstallation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.transfer_learning_nn">
+    <configuration default="false" name="transfer_learning_nn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64:$LD_LIBRARY_PATH" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.4" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/image_retraining" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FYP" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validateInstallation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="create_tfrecord" type="PythonConfigurationType" factoryName="Python" temporary="true">
-=======
-  <component name="RunManager" selected="Python.convert_tiff_to_jpeg">
-    <configuration default="false" name="convert_tiff_to_jpeg" type="PythonConfigurationType" factoryName="Python" temporary="true">
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-<<<<<<< HEAD
-        <env name="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64:$LD_LIBRARY_PATH" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/create_tfrecords" />
-=======
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FYP" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-<<<<<<< HEAD
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_tfrecords/create_tfrecord.py" />
-=======
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/image_retraining/transfer_learning_nn.py" />
+      <option name="PARAMETERS" value="--image_dir $USER_HOME$/Dataset/Hela_dataset/Hela_JPEG" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
@@ -478,14 +447,8 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-<<<<<<< HEAD
-        <env name="LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" value="" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.4" />
-=======
       </envs>
       <option name="SDK_HOME" value="" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -563,23 +526,12 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-<<<<<<< HEAD
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.validateInstallation" />
-      <item index="1" class="java.lang.String" itemvalue="Python.create_tfrecord" />
-    </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.create_tfrecord" />
-        <item index="1" class="java.lang.String" itemvalue="Python.validateInstallation" />
-=======
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.convert_tiff_to_jpeg" />
+      <item index="0" class="java.lang.String" itemvalue="Python.transfer_learning_nn" />
     </list>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.convert_tiff_to_jpeg" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <item index="0" class="java.lang.String" itemvalue="Python.transfer_learning_nn" />
       </list>
     </recent_temporary>
   </component>
@@ -588,61 +540,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="2c18d8e9-ca55-4c88-9828-5c1c07f9cf53" name="Default" comment="" />
-      <created>1498878665320</created>
+      <changelist id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="" />
+      <created>1503046356189</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1498878665320</updated>
-    </task>
-    <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="992" y="24" width="927" height="1056" extended-state="4" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5695793" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3105981" sideWeight="0.16720603" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.34357142" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35257083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3105981" sideWeight="0.83279395" order="7" side_tool="false" content_ui="tabs" />
-=======
-      <changelist id="f957e627-4be8-42d6-b7ba-93a5867d8ee0" name="Default" comment="" />
-      <created>1498837952071</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1498837952071</updated>
+      <updated>1503046356189</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="927" height="1056" extended-state="0" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.005393743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24474393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39959225" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -656,81 +576,251 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="TEXT_FILTER_SETTINGS">
-                <TextFilterSettings>
-                  <option name="MATCH_CASE" value="true" />
-                </TextFilterSettings>
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/create_tfrecords" />
-    </ignored-roots>
-  </component>
-=======
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/image_retraining/transfer_learning_nn.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/image_retraining/transfer_learning_nn.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32256">
+          <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.4/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5019">
+          <caret line="243" column="4" lean-forward="false" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/lib/io/file_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9765">
+          <caret line="477" column="4" lean-forward="false" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15414">
+          <caret line="734" column="4" lean-forward="false" selection-start-line="734" selection-start-column="4" selection-end-line="734" selection-end-column="4" />
+          <folding>
+            <element signature="e#3585#3623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lenet.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
-        <state relative-caret-position="340">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/build_image_data.py">
+    <entry file="file://$PROJECT_DIR$/Tutorial/CNN_tutorial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+        <state relative-caret-position="1869">
+          <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_labeling.py">
+    <entry file="file://$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32256">
+          <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.4/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5019">
+          <caret line="243" column="4" lean-forward="false" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/lib/io/file_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9765">
+          <caret line="477" column="4" lean-forward="false" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15414">
+          <caret line="734" column="4" lean-forward="false" selection-start-line="734" selection-start-column="4" selection-end-line="734" selection-end-column="4" />
+          <folding>
+            <element signature="e#3585#3623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32256">
+          <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.4/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5019">
+          <caret line="243" column="4" lean-forward="false" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31395">
+          <caret line="1514" column="4" lean-forward="false" selection-start-line="1514" selection-start-column="4" selection-end-line="1514" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17178">
+          <caret line="838" column="27" lean-forward="false" selection-start-line="838" selection-start-column="22" selection-end-line="838" selection-end-column="27" />
+          <folding>
+            <element signature="e#3585#3623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -738,22 +828,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validateInstallation.py">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-=======
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37960">
-          <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <state relative-caret-position="840">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/README.md">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/lib/io/file_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9765">
+          <caret line="477" column="4" lean-forward="false" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -761,274 +852,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/flags.py">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+        <state relative-caret-position="31794">
+          <caret line="1514" column="4" lean-forward="false" selection-start-line="1514" selection-start-column="4" selection-end-line="1514" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/dataset_utils.py">
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3940">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+        <state relative-caret-position="3654">
+          <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#3585#3623#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-=======
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <state relative-caret-position="27405">
+          <caret line="1305" column="23" lean-forward="false" selection-start-line="1305" selection-start-column="7" selection-end-line="1305" selection-end-column="24" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#3585#3623#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="31395">
+          <caret line="1514" column="4" lean-forward="false" selection-start-line="1514" selection-start-column="4" selection-end-line="1514" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32256">
+          <caret line="1540" column="8" lean-forward="false" selection-start-line="1540" selection-start-column="8" selection-end-line="1540" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dataset/Hela_dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.4/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5019">
+          <caret line="243" column="4" lean-forward="false" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/convert_png_to_jpeg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/lib/io/file_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9765">
+          <caret line="477" column="4" lean-forward="false" selection-start-line="477" selection-start-column="4" selection-end-line="477" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/image_retraining/transfer_learning_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-1247971765/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="298" column="4" lean-forward="false" selection-start-line="298" selection-start-column="4" selection-end-line="298" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lenet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build_image_data.py">
+    <entry file="file://$PROJECT_DIR$/Tutorial/CNN_tutorial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-=======
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19580">
-          <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          <folding />
+        <state relative-caret-position="1869">
+          <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/image_labeling.py">
+    <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="2016">
+          <caret line="96" column="61" lean-forward="false" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/image_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1092">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file:///usr/lib/python3.4/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5800">
-          <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#1587#1625#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/dataset_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1460">
-          <caret line="76" column="71" lean-forward="true" selection-start-line="76" selection-start-column="71" selection-end-line="76" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset/giantin/giant003.tif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset/giantin/giant003.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/build_image_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7960">
-          <caret line="409" column="14" lean-forward="false" selection-start-line="409" selection-start-column="14" selection-end-line="409" selection-end-column="14" />
-          <folding>
-            <element signature="e#2500#2538#0" expanded="true" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-=======
-        <state relative-caret-position="340">
-          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/image_labeling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file:///usr/lib/python3.4/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5800">
-          <caret line="291" column="14" lean-forward="false" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+        <state relative-caret-position="318">
+          <caret line="284" column="4" lean-forward="false" selection-start-line="284" selection-start-column="4" selection-end-line="284" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/platform/flags.py">
+    <entry file="file://$USER_HOME$/image_retraining/retrain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-=======
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/os/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19580">
-          <caret line="983" column="14" lean-forward="false" selection-start-line="983" selection-start-column="14" selection-end-line="983" selection-end-column="14" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/build_image_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-=======
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg" />
-    <entry file="file:///usr/local/lib/python3.4/dist-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37960">
-          <caret line="1902" column="8" lean-forward="false" selection-start-line="1902" selection-start-column="8" selection-end-line="1902" selection-end-column="8" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validateInstallation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/dataset_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3940">
-          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+        <state relative-caret-position="7847">
+          <caret line="484" column="4" lean-forward="false" selection-start-line="484" selection-start-column="4" selection-end-line="484" selection-end-column="4" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/create_tfrecords/create_tfrecord.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/build_image_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="387" column="42" lean-forward="false" selection-start-line="387" selection-start-column="42" selection-end-line="387" selection-end-column="42" />
-          <folding>
-            <element signature="e#2500#2538#0" expanded="true" />
->>>>>>> c2329a2592e66fc5d65412d7fc5202cedee0b203
+            <element signature="e#3585#3623#0" expanded="true" />
           </folding>
         </state>
       </provider>
