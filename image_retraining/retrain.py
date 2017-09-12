@@ -95,6 +95,7 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import csv
 from datetime import datetime
 import hashlib
 import os.path
@@ -112,6 +113,7 @@ from tensorflow.python.framework import tensor_shape
 from tensorflow.python.platform import gfile
 from tensorflow.python.util import compat
 
+
 FLAGS = None
 
 # These are all parameters that are tied to the particular model architecture
@@ -120,6 +122,12 @@ FLAGS = None
 # need to update these to reflect the values in the network you're using.
 MAX_NUM_IMAGES_PER_CLASS = 2 ** 27 - 1  # ~134M
 
+def save_to_csv(filename, data_arr):
+    f = open(filename, 'a')
+    with f:
+        writer =csv.writer(f)
+        for row in data_arr:
+            writer.writerow(row)
 
 def create_image_lists(image_dir, testing_percentage, validation_percentage):
   """Builds a list of training images from the file system.
@@ -1068,6 +1076,9 @@ def main(_):
     init = tf.global_variables_initializer()
     sess.run(init)
 
+    # Print the FLAGS setting to logfile.csv
+    save_to_csv(FLAGS.csvlogfile, [[FLAGS]])
+
     # Run the training for as many cycles as requested on the command line.
     for i in range(FLAGS.how_many_training_steps):
       # Get a batch of input bottleneck values, either calculated fresh every
@@ -1132,31 +1143,36 @@ def main(_):
                         intermediate_file_name)
         save_graph_to_file(sess, graph, intermediate_file_name)
 
-      # Test
-      if (i % FLAGS.eval_step_interval) == 0:
-        test_bottlenecks, test_ground_truth, test_filenames = (
-        get_random_cached_bottlenecks(
-          sess, image_lists, FLAGS.test_batch_size, 'testing',
-          FLAGS.bottleneck_dir, FLAGS.image_dir, jpeg_data_tensor,
-          decoded_image_tensor, resized_image_tensor, bottleneck_tensor,
-          FLAGS.architecture))
-        test_summary, test_accuracy, predictions = sess.run(
-        [merged, evaluation_step, prediction],
-        feed_dict={bottleneck_input: test_bottlenecks,
-                   ground_truth_input: test_ground_truth, keep_prob: 1.0})
-        tf.logging.info('%s: Step %d: Testing accuracy= %.1f%% (N=%d)' %
-                      (datetime.now(), i, test_accuracy * 100,
-                       len(test_bottlenecks)))
+      # # Test
+      # if (i % FLAGS.eval_step_interval) == 0:
+      #   test_bottlenecks, test_ground_truth, test_filenames = (
+      #   get_random_cached_bottlenecks(
+      #     sess, image_lists, FLAGS.test_batch_size, 'testing',
+      #     FLAGS.bottleneck_dir, FLAGS.image_dir, jpeg_data_tensor,
+      #     decoded_image_tensor, resized_image_tensor, bottleneck_tensor,
+      #     FLAGS.architecture))
+      #   test_summary, test_accuracy, predictions = sess.run(
+      #   [merged, evaluation_step, prediction],
+      #   feed_dict={bottleneck_input: test_bottlenecks,
+      #              ground_truth_input: test_ground_truth, keep_prob: 1.0})
+      #   tf.logging.info('%s: Step %d: Testing accuracy= %.1f%% (N=%d)' %
+      #                 (datetime.now(), i, test_accuracy * 100,
+      #                  len(test_bottlenecks)))
+      #
+      #   test_writer.add_summary(test_summary, i)
+      #
+      #   if FLAGS.print_misclassified_test_images:
+      #     tf.logging.info('=== MISCLASSIFIED TEST IMAGES ===')
+      #     for i, test_filename in enumerate(test_filenames):
+      #       if predictions[i] != test_ground_truth[i].argmax():
+      #         tf.logging.info('%70s  %s' %
+      #                         (test_filename,
+      #                          list(image_lists.keys())[predictions[i]]))
 
-        test_writer.add_summary(test_summary, i)
-
-        if FLAGS.print_misclassified_test_images:
-          tf.logging.info('=== MISCLASSIFIED TEST IMAGES ===')
-          for i, test_filename in enumerate(test_filenames):
-            if predictions[i] != test_ground_truth[i].argmax():
-              tf.logging.info('%70s  %s' %
-                              (test_filename,
-                               list(image_lists.keys())[predictions[i]]))
+      # Print the result to csvlogfile
+      if (i % FLAGS.eval_step_interval ==0):
+        intermediate_result = ['', datetime.now(), i, train_accuracy*100, validation_accuracy*100]
+        save_to_csv(FLAGS.csvlogfile, [intermediate_result])
 
     # We've completed all our training, so run a final test evaluation on
     # some new images we haven't used before.
@@ -1173,13 +1189,22 @@ def main(_):
     tf.logging.info('Final test accuracy = %.1f%% (N=%d)' %
                     (test_accuracy * 100, len(test_bottlenecks)))
 
+    misclassified_image_arr = []
     if FLAGS.print_misclassified_test_images:
+
       tf.logging.info('=== MISCLASSIFIED TEST IMAGES ===')
       for i, test_filename in enumerate(test_filenames):
         if predictions[i] != test_ground_truth[i].argmax():
-          tf.logging.info('%70s  %s' %
+          tf.logging.info('%s  %s' %
                           (test_filename,
                            list(image_lists.keys())[predictions[i]]))
+          misclassified_image_arr.append((test_filename,
+                           list(image_lists.keys())[predictions[i]]))
+
+    # Print the result to csvlogfile
+    final_result = ['', datetime.now(), i, '', '',
+                          '', test_accuracy*100, FLAGS.summaries_dir, misclassified_image_arr]
+    save_to_csv(FLAGS.csvlogfile, [final_result])
 
     # Write out the trained graph and labels with the weights stored as
     # constants.
@@ -1199,7 +1224,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--output_graph',
       type=str,
-      default='/tmp/output_graph_cho.pb',
+      default='/tmp/output_graph.pb',
       help='Where to save the trained graph.'
   )
   parser.add_argument(
@@ -1256,7 +1281,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--eval_step_interval',
       type=int,
-      default=10,
+      default=500,
       help='How often to evaluate the training results.'
   )
   parser.add_argument(
@@ -1386,5 +1411,12 @@ if __name__ == '__main__':
       takes 128x128 images. See https://research.googleblog.com/2017/06/mobilenets-open-source-models-for.html
       for more information on Mobilenet.\
       """)
+
+  parser.add_argument(
+    '--csvlogfile',
+    type=str,
+    default='',
+    help='Link to logfile.csv'
+  )
   FLAGS, unparsed = parser.parse_known_args()
   tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
