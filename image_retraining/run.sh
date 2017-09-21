@@ -18,13 +18,13 @@ do
 done
 
 # Setting hyper param array
-learning_rate_arr=(0.1 0.05 0.01 0.005 0.001)
-how_many_training_steps=25000
-testing_percentage_arr=(20 10)
-validation_percentage_arr=(10 10)
-train_batch_size_arr=(50 100 150)
-hidden_layer1_size_arr=(50 100 200)
-dropout_keep_prob_arr=(0.5 0.7 0.8)
+learning_rate_arr=(0.1 0.01 0.001)
+how_many_training_steps=10000
+testing_percentage_arr=(10)
+validation_percentage_arr=(10)
+train_batch_size_arr=(50 150)
+hidden_layer1_size_arr=(50  200)
+dropout_keep_prob_arr=(0.7 0.8)
 
 #learning_rate_arr=(0.1 0.05)
 #how_many_training_steps=2000
@@ -90,6 +90,7 @@ do
                                 --testing_percentage ${testing_percentage} --train_batch_size ${train_batch_size} \
                                 --hidden_layer1_size ${hidden_layer1_size} --dropout_keep_prob ${dropout_keep_prob} \
                                 --print_misclassified_test_images True --csvlogfile ${log_file} --summaries_dir ${tensorboard_log_file}
+                                --architecture 'mobilenet_1.0_224'
 					done
 				done
 			done

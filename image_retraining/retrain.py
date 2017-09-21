@@ -1190,6 +1190,7 @@ def main(_):
                     (test_accuracy * 100, len(test_bottlenecks)))
 
     misclassified_image_arr = []
+
     if FLAGS.print_misclassified_test_images:
 
       tf.logging.info('=== MISCLASSIFIED TEST IMAGES ===')
@@ -1202,7 +1203,7 @@ def main(_):
                            list(image_lists.keys())[predictions[i]]))
 
     # Print the result to csvlogfile
-    final_result = ['', datetime.now(), i, '', '',
+    final_result = ['', datetime.now(), '', '', '',
                           '', test_accuracy*100, FLAGS.summaries_dir, misclassified_image_arr]
     save_to_csv(FLAGS.csvlogfile, [final_result])
 
@@ -1341,7 +1342,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--model_dir',
       type=str,
-      default='/tmp/imagenet',
+      default='/home/duclong002/pretrained_model/imagenet',
       help="""\
       Path to classify_image_graph_def.pb,
       imagenet_synset_to_human_label_map.txt, and
