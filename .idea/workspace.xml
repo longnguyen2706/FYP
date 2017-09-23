@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image_retraining/run_three_nets.sh" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Paper/InceptionNetv3.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_retraining/run_three_nets.sh" afterPath="$PROJECT_DIR$/image_retraining/run_three_nets.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_retraining/three_nets.py" afterPath="$PROJECT_DIR$/image_retraining/three_nets.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,8 +74,8 @@
       <file leaf-file-name="three_nets.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/image_retraining/three_nets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="988" column="36" lean-forward="true" selection-start-line="988" selection-start-column="36" selection-end-line="988" selection-end-column="36" />
+            <state relative-caret-position="209">
+              <caret line="954" column="67" lean-forward="false" selection-start-line="952" selection-start-column="24" selection-end-line="954" selection-end-column="67" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -84,11 +83,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="saver.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/training/saver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="950" column="6" lean-forward="false" selection-start-line="950" selection-start-column="6" selection-end-line="950" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="run_three_nets.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_retraining/run_three_nets.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-703">
+              <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -97,8 +106,8 @@
       <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_retraining/run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-798">
-              <caret line="9" column="62" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="5" />
+            <state relative-caret-position="1425">
+              <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -138,16 +147,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inception_resnet_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slim/nets/inception_resnet_v2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1439">
-              <caret line="330" column="4" lean-forward="false" selection-start-line="330" selection-start-column="4" selection-end-line="330" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -159,7 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>learn</find>
       <find>create_image_lists</find>
       <find>add_final</find>
       <find>optimizer</find>
@@ -189,6 +187,7 @@
       <find>get_random_cached_bottlenecks</find>
       <find>graph</find>
       <find>print</find>
+      <find>i+1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -678,13 +677,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dataset/convert_tiff_to_jpeg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/image_retraining/retrain.py" />
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1026,26 +1018,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/training/saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="950" column="6" lean-forward="false" selection-start-line="950" selection-start-column="6" selection-end-line="950" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image_retraining/run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798">
-          <caret line="9" column="62" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="5" />
+        <state relative-caret-position="1425">
+          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image_retraining/run_three_nets.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="-703">
+          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image_retraining/three_nets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="988" column="36" lean-forward="true" selection-start-line="988" selection-start-column="36" selection-end-line="988" selection-end-column="36" />
+        <state relative-caret-position="209">
+          <caret line="954" column="67" lean-forward="false" selection-start-line="952" selection-start-column="24" selection-end-line="954" selection-end-column="67" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

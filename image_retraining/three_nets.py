@@ -771,11 +771,11 @@ def variable_summaries(var):
         tf.summary.histogram('histogram', var)
 
 
-def early_stopping(train_validation_loss_results, early_stopping_n_steps):
+def early_stopping(global_step, train_validation_loss_results, early_stopping_n_steps):
     # Early stopping
-    n_last_results =[]
-    if len(train_validation_loss_results)> early_stopping_n_steps:
-        for i in range(len(train_validation_loss_results)-early_stopping_n_steps, len(train_validation_loss_results)):
+    n_last_results = []
+    if len(train_validation_loss_results) > early_stopping_n_steps:
+        for i in range(len(train_validation_loss_results) - early_stopping_n_steps, len(train_validation_loss_results)):
             result = train_validation_loss_results[i]
             n_last_results.append(result)
 
@@ -788,6 +788,27 @@ def early_stopping(train_validation_loss_results, early_stopping_n_steps):
             return True, n_last_results[0]
     else:
         return True, train_validation_loss_results[0]
+
+
+def get_checkpoint_path(step):
+    checkpoint_name = "model_" + "step_" + str(step) + "_lr_" + str(FLAGS.learning_rate) + "_test_p_" + str(
+        FLAGS.testing_percentage) + \
+                      "_val_p_" + str(FLAGS.validation_percentage) + "_eval_inv_" + str(FLAGS.eval_step_interval) + \
+                      "_train_b_" + str(FLAGS.train_batch_size) + "_hidden1_" + str(FLAGS.hidden_layer1_size) + \
+                      "_dropout_" + str(FLAGS.dropout_keep_prob) + "_early_s" + str(FLAGS.early_stopping_n_steps)
+    checkpoint_path = os.path.join(FLAGS.checkpoint_dir, checkpoint_name)
+    return checkpoint_path + '.ckpt'
+
+
+def delete_and_update_checkpoint_arr(checkpoint_path_arr):
+    num_to_keep = FLAGS.early_stopping_n_steps
+    if (len(checkpoint_path_arr) > num_to_keep):
+        checkpoint_to_del = checkpoint_path_arr.pop(0)
+        try:
+            os.remove(checkpoint_to_del)
+        except:
+            tf.logging.info("Checkpoint dir to del does not exists")
+    return checkpoint_path_arr
 
 
 def main(_):
@@ -843,6 +864,8 @@ def main(_):
             # init = tf.global_variables_initializer()
             sess_name.close()
 
+
+    checkpoint_path_arr = []
     with tf.Session() as sess:
         bottleneck_tensor_size = 0
         for model_info in model_infos:
@@ -923,34 +946,45 @@ def main(_):
                     intermediate_result = ['', datetime.now(), i, train_accuracy * 100, validation_accuracy * 100]
                     save_to_csv(FLAGS.csvlogfile, [intermediate_result])
 
-                    train_accuracy_two_decimal = int(train_accuracy * 10000) / 10000
-                    validation_accuracy_two_decimal = int(validation_accuracy * 10000) / 10000
-                    # Store the result into array
-                    train_validation_loss_result = {
-                        'step': i,
-                        'train_accuracy': train_accuracy_two_decimal,
-                        'validation_accuracy': validation_accuracy_two_decimal,
-                        'loss': cross_entropy_value
-                    }
-                    train_validation_loss_results.append(train_validation_loss_result)
+                    train_accuracy_two_decimal = int(train_accuracy * 10000) / 100
+                    validation_accuracy_two_decimal = int(validation_accuracy * 10000) / 100
 
-                    # Early stopping condition check
-                    is_continue_training, result = early_stopping(train_validation_loss_results,
-                                                                  FLAGS.early_stopping_n_steps)
-                    if not is_continue_training:
-                        tf.logging.info("Early stopping. The best result is at %d steps: Train accuracy %.1f%%,"
-                                        " Validation accuracy %.1f%%, Loss: %.f", result['step'],
-                                        result['train_accuracy'],
-                                        result['validation_accuracy'], result['loss'])
+                    if i >=2000:
+                        # Save a checkpoint
+                        checkpoint_path = get_checkpoint_path(i)
+                        checkpoint_path_arr.append(checkpoint_path)
 
-                        early_stopping_logging_info = "The best result is at " + str(result['step']) + " steps:" + \
-                                                      "Train accuracy: " + str(
-                            result['train_accuracy']) + ", Validation accuracy: " + \
-                                                      str(result['validation_accuracy']) + ", Loss: " + str(
-                            result['loss'])
+                        tf.train.Saver(write_version=tf.train.SaverDef.V1).save(sess, checkpoint_path)
+                        checkpoint_path_arr = delete_and_update_checkpoint_arr(checkpoint_path_arr)
+                        #m mmprint("checkpoint_path_arr", checkpoint_path_arr)
 
-                        early_stopping_result = ['', '', '', '', '', '', '', '', early_stopping_logging_info]
-                        save_to_csv(FLAGS.csvlogfile, [early_stopping_result])
+                        # Store the result into array
+                        train_validation_loss_result = {
+                            'step': i,
+                            'train_accuracy': train_accuracy_two_decimal,
+                            'validation_accuracy': validation_accuracy_two_decimal,
+                            'loss': cross_entropy_value,
+                            'checkpoint_path': checkpoint_path
+                        }
+                        train_validation_loss_results.append(train_validation_loss_result)
+
+                        # Early stopping condition check
+                        is_continue_training, result = early_stopping(i, train_validation_loss_results,
+                                                                      FLAGS.early_stopping_n_steps)
+                        if not is_continue_training:
+                            tf.logging.info("Early stopping. The best result is at %d steps: Train accuracy %.1f%%,"
+                                            " Validation accuracy %.1f%%, Loss: %.f", result['step'],
+                                            result['train_accuracy'],
+                                            result['validation_accuracy'], result['loss'])
+
+                            early_stopping_logging_info = "The best result is at " + str(result['step']) + " steps:" + \
+                                                          "Train accuracy: " + str(
+                                result['train_accuracy']) + ", Validation accuracy: " + \
+                                                          str(result['validation_accuracy']) + ", Loss: " + str(
+                                result['loss'])
+
+                            early_stopping_result = ['', '', '', '', '', '', '', '', early_stopping_logging_info]
+                            save_to_csv(FLAGS.csvlogfile, [early_stopping_result])
             else:
                 break
         # We've completed all our training, so run a final test evaluation on
@@ -959,6 +993,11 @@ def main(_):
             get_random_cached_bottlenecks(
                 image_lists, FLAGS.test_batch_size, 'testing',
                 FLAGS.image_dir, FLAGS.bottleneck_dir, ARCHITECTURES))
+
+        # restore the best checkpoint
+        # ckpt = tf.train.get_checkpoint_state(result['checkpoint_path'])
+        tf.train.Saver().restore(sess, result['checkpoint_path'])
+
         test_accuracy, predictions = sess.run(
             [evaluation_step, prediction],
             feed_dict={bottleneck_input: test_bottlenecks,
@@ -1119,7 +1158,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--model_dir',
         type=str,
-        default='/home/long/pretrained_model/',
+        default='/home/duclong002/pretrained_model/',
         help="""\
       Path to classify_image_graph_def.pb,
       imagenet_synset_to_human_label_map.txt, and
@@ -1202,6 +1241,13 @@ if __name__ == '__main__':
         type=int,
         default=10,
         help='Number of further validation steps to be executed before early stopping'
+    )
+    parser.add_argument(
+        '--checkpoint_dir',
+        type=str,
+        default="/home/duclong002/checkpoints",
+        help="Checkpoint dir"
+
     )
 
     FLAGS, unparsed = parser.parse_known_args()

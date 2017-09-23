@@ -9,6 +9,7 @@ JPEG_DATA_DIR=$HOME_DIR"Dataset/JPEG_data/"
 CODE_DIR=$HOME_DIR"FYP/image_retraining/"
 #DATASET_NAME=("BreastCancerCell_JPEG" "CHO_JPEG" "Hela_JPEG")
 DATASET_NAME=("Hela_JPEG")
+PRETRAINED_MODEL=$HOME_DIR"pretrained_model/"
 
 # print out name of the datasets will be used
 echo "The program will do training on these dataset:"
@@ -85,25 +86,16 @@ do
 					do
 						echo "Dropout keep prob: $dropout_keep_prob"
 						tensorboard_log_file=$HOME_DIR"retrain_logs/"$DATASET"_"`date '+%d-%m-%H:%M:%S'`
-                        python3 ${CODE_DIR}retrain.py --image_dir ${image_dir} --how_many_training_steps ${how_many_training_steps} \
+                        python3 ${CODE_DIR}three_nets.py --image_dir ${image_dir} --how_many_training_steps ${how_many_training_steps} \
                                 --learning_rate ${learning_rate} --validation_percentage ${validation_percentage} \
                                 --testing_percentage ${testing_percentage} --train_batch_size ${train_batch_size} \
                                 --hidden_layer1_size ${hidden_layer1_size} --dropout_keep_prob ${dropout_keep_prob} \
                                 --print_misclassified_test_images True --csvlogfile ${log_file} --summaries_dir ${tensorboard_log_file}
-                                --architecture 'mobilenet_1.0_224'
+                                --model_dir ${PRETRAINED_MODEL}
+
 					done
 				done
 			done
 		done
 	done
 done
-#for run in {1..10}
-#do
-#  command
-#done
-#
-#for f in *
-#do
-#   i=$(awk 'NR==1{print $1;exit}' $f)
-#   myexec $i myfile.extension
-#done
