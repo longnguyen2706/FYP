@@ -24,8 +24,8 @@ from tensorflow.python.util import compat
 
 FLAGS = None
 # ARCHITECTURES = ['inception_v3', 'mobilenet_1.0_224', 'resnet_v2']
-#ARCHITECTURES = ['resnet_v2', 'inception_v3']
-ARCHITECTURES = ['resnet_v2','inception_v3','inception_resnet_v2']
+ARCHITECTURES = ['resnet_v2']
+#ARCHITECTURES = ['inception_resnet_v2']
 #ARCHITECTURES = ['resnet50']
 
 
