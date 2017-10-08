@@ -138,7 +138,7 @@ def create_image_lists(image_dir, testing_percentage):
             'fold3': fold3,
             'fold4': fold4
         }
-    print("cross validation folds and test images", result)
+    # print("cross validation folds and test images", result)
     return result
 
 
@@ -451,9 +451,12 @@ def get_random_cached_bottlenecks(image_lists, how_many, categories,
                     ground_truths.append(ground_truth)
                     filenames.append(image_name)
 
-            merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
-
-            bottlenecks.append(merged_bottleneck)
+            # merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+            merged_bottleneck_reshape =[]
+            for sub_arr in merged_bottleneck:
+                for item in sub_arr:
+                    merged_bottleneck_reshape.append(item)
+            bottlenecks.append(merged_bottleneck_reshape)
 
     else:
         # Retrieve all bottlenecks.
@@ -481,9 +484,14 @@ def get_random_cached_bottlenecks(image_lists, how_many, categories,
                         ground_truths.append(ground_truth)
                         filenames.append(image_name)
 
-                merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+                # merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+                # bottlenecks.append(merged_bottleneck)
+                merged_bottleneck_reshape = []
+                for sub_arr in merged_bottleneck:
+                    for item in sub_arr:
+                        merged_bottleneck_reshape.append(item)
+                bottlenecks.append(merged_bottleneck_reshape)
 
-                bottlenecks.append(merged_bottleneck)
     return bottlenecks, ground_truths, filenames
 
 
