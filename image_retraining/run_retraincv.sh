@@ -9,7 +9,7 @@ HOME_DIR="/home/duclong002/"
 JPEG_DATA_DIR=$HOME_DIR"Dataset/JPEG_data/"
 CODE_DIR=$HOME_DIR"FYP/image_retraining/"
 #DATASET_NAME=("BreastCancerCell_JPEG" "CHO_JPEG" "Hela_JPEG")
-DATASET_NAME=("Hela_JPEG")
+DATASET_NAME=("PAP_smear_JPEG")
 
 # print out name of the datasets will be used
 echo "The program will do training on these dataset:"
@@ -19,7 +19,7 @@ do
 done
 
 # Setting hyper param array
-learning_rate_arr=(0.075 0.01) #(0.2) #0.075
+learning_rate_arr=(0.05 0.01) #(0.2) #0.075
 how_many_training_steps=10000
 testing_percentage_arr=(20)
 train_batch_size_arr=(30 50 100)
