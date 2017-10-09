@@ -1028,7 +1028,7 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
         test_bottlenecks, test_ground_truth, test_filenames = (
             get_random_cached_bottlenecks(
                 image_lists, GENERAL_SETTING['test_batch_size'], testing_fold_names,
-                GENERAL_SETTING['image_dir'], GENERAL_SETTING['bottleneck_dir'], architecture))
+                GENERAL_SETTING['image_dir'], GENERAL_SETTING['bottleneck_dir'], architectures))
 
         # restore the best checkpoint
         # ckpt = tf.train.get_checkpoint_state(result['checkpoint_path'])
