@@ -12,6 +12,7 @@ import re
 import sys
 import tarfile
 from operator import itemgetter
+import statistics
 
 import numpy as np
 from six.moves import urllib
@@ -23,17 +24,19 @@ from tensorflow.python.platform import gfile
 from tensorflow.python.util import compat
 
 ################## General Setting ######################
-csv_log_directory = '/home/long/retrain_logs/logfile/' + str(datetime.now()).replace(" ","-")
-summaries_directory = '/home/long/retrain_logs/Hela_JPEG/' + str(datetime.now()).replace(" ","-")
+csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "Hela_3_features_extractor_" + str(
+    datetime.now()).replace(" ", "-") + ".csv"
+summaries_directory = '/home/duclong002/retrain_logs/Hela_features_extractor/' + str(datetime.now()).replace(" ",
+                                                                                                       "-") + ".csv"
 GENERAL_SETTING = {
     'bottleneck_dir': '/tmp/bottleneck',
     'logits_dir': 'tmp/logits',
-    'checkpoint_dir': '/home/long/checkpoints',
+    'checkpoint_dir': '/home/duclong002/checkpoints',
     'early_stopping_n_steps': 5,
     'eval_step_interval': 100,
     'final_tensor_name': 'final_result',
     'flip_left_right': False,
-    'model_dir': '/home/long/pretrained_model/',
+    'model_dir': '/home/duclong002/pretrained_model/',
     'output_labels': '/tmp/output_labels.txt',
     'print_misclassified_test_images': True,
     'random_brightness': 0,
@@ -44,37 +47,45 @@ GENERAL_SETTING = {
     'validation_batch_size': -1,
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    'image_dir': '/home/long/Dataset/JPEG_data/Hela_JPEG/',
-    'summaries_dir':summaries_directory
+    'image_dir': '/home/duclong002/Dataset/JPEG_data/Hela_JPEG/',
+    'summaries_dir': summaries_directory
 }
 
 ###################### Model Setting #######################
+# MODEL_SETTING = {
+#         'architecture': ['inception_v3'],
+#         'dropout_keep_prob': 0.6,
+#         'hidden_layer1_size': 50,
+#         'learning_rate': 0.075,
+#         'learning_rate_decay': 0.66,
+#         'train_batch_size': 50,
+#     }
 MODEL_SETTING = {
-        'architecture': ['inception_v3'],
-        'dropout_keep_prob': 0.69999999,
-        'hidden_layer1_size': 50,
-        'learning_rate': 0.05,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 50,
-    }
-    #
-    # {
-    #     'architecture': 'resnet_v2',
-    #     'dropout_keep_prob': 0.69999999,
-    #     'hidden_layer1_size': 50,
-    #     'learning_rate': 0.05,
-    #     'learning_rate_decay': 0.33,
-    #     'train_batch_size': 50,
-    # },
-    #
-    # {
-    #     'architecture': 'inception_resnet_v2',
-    #     'dropout_keep_prob': 0.69999999,
-    #     'hidden_layer1_size': 50,
-    #     'learning_rate': 0.05,
-    #     'learning_rate_decay': 0.33,
-    #     'train_batch_size': 50,
-    # }
+    'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'],
+    'dropout_keep_prob': 0.7,
+    'hidden_layer1_size': 50,
+    'learning_rate': 0.075,
+    'learning_rate_decay': 0.5,
+    'train_batch_size': 30,
+}
+#
+# {
+#     'architecture': 'resnet_v2',
+#     'dropout_keep_prob': 0.69999999,
+#     'hidden_layer1_size': 50,
+#     'learning_rate': 0.05,
+#     'learning_rate_decay': 0.33,
+#     'train_batch_size': 50,
+# },
+#
+# {
+#     'architecture': 'inception_resnet_v2',
+#     'dropout_keep_prob': 0.69999999,
+#     'hidden_layer1_size': 50,
+#     'learning_rate': 0.05,
+#     'learning_rate_decay': 0.33,
+#     'train_batch_size': 50,
+# }
 
 
 
@@ -88,7 +99,7 @@ MAX_NUM_IMAGES_PER_CLASS = 2 ** 27 - 1  # ~134M
 
 def save_to_csv(filename, data_arr):
     # If file does not exist, create new file. Else, append to the existing file
-    if not os._exists(filename):
+    if not os.path.exists(filename):
         f = open(filename, 'w')
     else:
         f = open(filename, 'a')
@@ -148,8 +159,8 @@ def create_image_lists(image_dir):
 
         # init the collection that holds 10 folds namely fold1, fold2 ... fold10
         fold_collection = {}
-        for i in range (1,11):
-            fold_collection['fold%s' %i] = []
+        for i in range(1, 11):
+            fold_collection['fold%s' % i] = []
 
         for file_name in file_list:
             base_name = os.path.basename(file_name)
@@ -170,20 +181,19 @@ def create_image_lists(image_dir):
             percentage_hash = ((int(hash_name_hashed, 16) %
                                 (MAX_NUM_IMAGES_PER_CLASS + 1)) *
                                (100.0 / MAX_NUM_IMAGES_PER_CLASS))
-            for i in range (1,11):
-                #0 to <10: fold1 ... 90 to <100 fold10
-                if (percentage_hash >=10*(i-1) and percentage_hash < 10*i):
-                    fold_collection['fold%s' %i].append(base_name)
+            for i in range(1, 11):
+                # 0 to <10: fold1 ... 90 to <100 fold10
+                if (percentage_hash >= 10 * (i - 1) and percentage_hash < 10 * i):
+                    fold_collection['fold%s' % i].append(base_name)
                 # in case 100, add to fold10
                 if (percentage_hash == 100):
-                    fold_collection['fold%s'%10].append(base_name)
-
+                    fold_collection['fold%s' % 10].append(base_name)
 
         result[label_name] = {
             'dir': dir_name,
             'fold_collection': fold_collection
         }
-    #print("cross validation folds and test images", result)
+    # print("cross validation folds and test images", result)
     return result
 
 
@@ -276,9 +286,6 @@ def ensure_dir_exists(dir_name):
     """
     if not os.path.exists(dir_name):
         os.makedirs(dir_name)
-
-
-bottleneck_path_2_bottleneck_values = {}
 
 
 def create_bottleneck_file(bottleneck_path, image_lists, label_name, index,
@@ -496,39 +503,46 @@ def get_random_cached_bottlenecks(image_lists, how_many, categories,
                     ground_truths.append(ground_truth)
                     filenames.append(image_name)
 
-            merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
-
-            bottlenecks.append(merged_bottleneck)
+            # merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+            merged_bottleneck_reshape = []
+            for sub_arr in merged_bottleneck:
+                for item in sub_arr:
+                    merged_bottleneck_reshape.append(item)
+            bottlenecks.append(merged_bottleneck_reshape)
 
     else:
         # Retrieve all bottlenecks.
         for label_index, label_name in enumerate(image_lists.keys()):
             # choose random fold from list of fold in training set
-            category = random.choice(categories)
-            for image_index, image_name in enumerate(
-                    image_lists[label_name]['fold_collection'][category]):
-                image_name = get_image_path(image_lists, label_name, image_index,
-                                            image_dir, category)
-                merged_bottleneck = []
-                merged_bottleneck_shape = 0
-                for i in range(len(architectures)):
+            for category in categories:
+                for image_index, image_name in enumerate(
+                        image_lists[label_name]['fold_collection'][category]):
+                    image_name = get_image_path(image_lists, label_name, image_index,
+                                                image_dir, category)
+                    merged_bottleneck = []
+                    merged_bottleneck_shape = 0
+                    for i in range(len(architectures)):
 
-                    architecture = architectures[i]
-                    bottleneck = get_bottleneck(
-                        image_lists, label_name, image_index, image_dir, category,
-                        bottleneck_dir, architecture)
-                    merged_bottleneck.append(bottleneck)
-                    merged_bottleneck_shape += len(bottleneck)
+                        architecture = architectures[i]
+                        bottleneck = get_bottleneck(
+                            image_lists, label_name, image_index, image_dir, category,
+                            bottleneck_dir, architecture)
+                        merged_bottleneck.append(bottleneck)
+                        merged_bottleneck_shape += len(bottleneck)
 
-                    ground_truth = np.zeros(class_count, dtype=np.float32)
-                    ground_truth[label_index] = 1.0
-                    if (i == len(architectures) - 1):
-                        ground_truths.append(ground_truth)
-                        filenames.append(image_name)
+                        ground_truth = np.zeros(class_count, dtype=np.float32)
+                        ground_truth[label_index] = 1.0
+                        if (i == len(architectures) - 1):
+                            ground_truths.append(ground_truth)
+                            filenames.append(image_name)
 
-                merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+                    # merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+                    merged_bottleneck_reshape = []
+                    for sub_arr in merged_bottleneck:
+                        for item in sub_arr:
+                            merged_bottleneck_reshape.append(item)
+                    bottlenecks.append(merged_bottleneck_reshape)
 
-                bottlenecks.append(merged_bottleneck)
     return bottlenecks, ground_truths, filenames
 
 
@@ -805,7 +819,7 @@ def add_final_training_ops(class_count, final_tensor_name, bottleneck_tensor_siz
         adaptive_learning_rate = tf.train.exponential_decay(MODEL_SETTING['learning_rate'], global_step, 1000,
                                                             MODEL_SETTING['learning_rate_decay'], staircase=True)
 
-        #optimizer = tf.train.GradientDescentOptimizer(FLAGS.learning_rate)
+        # optimizer = tf.train.GradientDescentOptimizer(FLAGS.learning_rate)
         optimizer = tf.train.GradientDescentOptimizer(adaptive_learning_rate)
         train_step = optimizer.minimize(cross_entropy_mean)
 
@@ -848,10 +862,10 @@ def variable_summaries(var):
         tf.summary.histogram('histogram', var)
 
 
-def early_stopping_by_loss (train_cross_entropy_values, early_stopping_n_steps):
-    n_last_losses =[]
-    if len(train_cross_entropy_values)>early_stopping_n_steps:
-        for i in range(len(train_cross_entropy_values)-early_stopping_n_steps, len (train_cross_entropy_values)):
+def early_stopping_by_loss(train_cross_entropy_values, early_stopping_n_steps):
+    n_last_losses = []
+    if len(train_cross_entropy_values) > early_stopping_n_steps:
+        for i in range(len(train_cross_entropy_values) - early_stopping_n_steps, len(train_cross_entropy_values)):
             result = train_cross_entropy_values[i]
             n_last_losses.append(result)
 
@@ -863,19 +877,22 @@ def early_stopping_by_loss (train_cross_entropy_values, early_stopping_n_steps):
     else:
         return True, train_cross_entropy_values[0]
 
+
 def get_checkpoint_path(step, training_fold_names):
-    fold_indexs=""
+    fold_indexs = ""
     for training_fold_name in training_fold_names:
-        fold_indexs= fold_indexs+training_fold_name[4:len(training_fold_name)] #foldi-> i
+        fold_indexs = fold_indexs + training_fold_name[4:len(training_fold_name)]  # foldi-> i
 
     model = ''
     for architecture in MODEL_SETTING['architecture']:
-        model = model+"_"+architecture
+        model = model + "_" + architecture
 
-    checkpoint_name = "model_" +str(model)+ "_step_" + str(step) + "_folds_"+str(fold_indexs)+  "_lr_" + \
-                        str(MODEL_SETTING['learning_rate'])+ "_eval_inv_" + str(GENERAL_SETTING['eval_step_interval']) + \
-                      "_train_b_" + str(MODEL_SETTING['train_batch_size']) + "_hidden1_" + str(MODEL_SETTING['hidden_layer1_size']) + \
-                      "_dropout_" + str(MODEL_SETTING['dropout_keep_prob']) + "_early_s" + str(GENERAL_SETTING['early_stopping_n_steps'])
+    checkpoint_name = "model_" + str(model) + "_step_" + str(step) + "_folds_" + str(fold_indexs) + "_lr_" + \
+                      str(MODEL_SETTING['learning_rate']) + "_eval_inv_" + str(GENERAL_SETTING['eval_step_interval']) + \
+                      "_train_b_" + str(MODEL_SETTING['train_batch_size']) + "_hidden1_" + str(
+        MODEL_SETTING['hidden_layer1_size']) + \
+                      "_dropout_" + str(MODEL_SETTING['dropout_keep_prob']) + "_early_s" + str(
+        GENERAL_SETTING['early_stopping_n_steps'])
     checkpoint_path = os.path.join(GENERAL_SETTING['checkpoint_dir'], checkpoint_name)
     return checkpoint_path + '.cpkt'
 
@@ -890,30 +907,30 @@ def delete_and_update_checkpoint_arr(checkpoint_path_arr):
             tf.logging.info("Checkpoint dir to del does not exists")
     return checkpoint_path_arr
 
+
 def delete_all_checkpoints(checkpoint_path_arr):
     for checkpoint_path in checkpoint_path_arr:
-        checkpoint_path_metafile = checkpoint_path+".meta"
+        checkpoint_path_metafile = checkpoint_path + ".meta"
         try:
             os.remove(checkpoint_path)
             os.remove(checkpoint_path_metafile)
         except:
             tf.logging.info("Checkpointdir to del does not exists")
 
+
 def train_validation_two_decimal(train_accuracy, validation_accuracy):
     train_accuracy_two_decimal = int(train_accuracy * 10000) / 100
     validation_accuracy_two_decimal = int(validation_accuracy * 10000) / 100
     return train_accuracy_two_decimal, validation_accuracy_two_decimal
 
+
 def training_operation(image_lists, pretrained_model_infos, training_fold_names, testing_fold_names):
-    # Print the FLAGS setting to logfile.csv
-    SETTINGS = [GENERAL_SETTING, MODEL_SETTING]
-    save_to_csv(GENERAL_SETTING['csvlogfile'], [SETTINGS])
     train_cross_entropy_values = []
 
     checkpoint_path_arr = []
 
     architectures = []
-    for i in range (len(pretrained_model_infos)):
+    for i in range(len(pretrained_model_infos)):
         architecture = pretrained_model_infos[i]['architecture']
         architectures.append(architecture)
 
@@ -944,7 +961,6 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
         init = tf.global_variables_initializer()
         sess.run(init)
 
-
         is_continue_training = True
         for i in range(GENERAL_SETTING['how_many_training_steps']):
 
@@ -961,7 +977,7 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
                                keep_prob: MODEL_SETTING['dropout_keep_prob'],
                                global_step: i})
 
-                train_writer.add_summary(train_summary, i)
+                # train_writer.add_summary(train_summary, i)
 
                 is_last_step = (i + 1 == GENERAL_SETTING['how_many_training_steps'])
                 if (i % GENERAL_SETTING['eval_step_interval']) == 0 or is_last_step:
@@ -980,12 +996,12 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
                     train_accuracy_two_decimal, validation_accuracy_two_decimal = train_validation_two_decimal(
                         train_accuracy, 0)
                     intermediate_result = ['', datetime.now(), i, train_accuracy * 100, cross_entropy_value, '',
-                                           training_fold_names]
+                                           training_fold_names, testing_fold_names]
                     # Print the result to csvlogfile
 
                     save_to_csv(GENERAL_SETTING['csvlogfile'], [intermediate_result])
 
-                    if i >= 1000:
+                    if i >= 0:
                         # Save a checkpoint
                         checkpoint_path = get_checkpoint_path(i, training_fold_names)
                         checkpoint_path_arr.append(checkpoint_path)
@@ -1003,12 +1019,12 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
                         }
                         train_cross_entropy_values.append(train_cross_entropy_value)
 
-                        #Early stopping condition check
+                        # Early stopping condition check
                         is_continue_training, result = early_stopping_by_loss(train_cross_entropy_values,
                                                                               GENERAL_SETTING['early_stopping_n_steps'])
                         if not is_continue_training:
                             tf.logging.info("Early stopping. The best result is at %d steps: Train accuracy %.1f%%,"
-                                             "Loss: %.f", result['step'],
+                                            "Loss: %.f", result['step'],
                                             result['train_accuracy'],
                                             result['loss'])
 
@@ -1017,7 +1033,7 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
                                                           "Train accuracy: " + str(
                                 result['train_accuracy']) + ", Loss: " + str(result['loss'])
 
-                            early_stopping_result = ['', '', '', '', '','', '', '', '', early_stopping_logging_info]
+                            early_stopping_result = ['', '', '', '', '', '', '', '', '', early_stopping_logging_info]
                             save_to_csv(GENERAL_SETTING['csvlogfile'], [early_stopping_result])
 
             else:
@@ -1055,19 +1071,26 @@ def training_operation(image_lists, pretrained_model_infos, training_fold_names,
                                                     list(image_lists.keys())[predictions[i]]))
 
         # Print the result to csvlogfile
-        final_result = ['', datetime.now(), '', '', '','',
+        final_result = ['', datetime.now(), '', '', '', '',
                         '', test_accuracy * 100, GENERAL_SETTING['summaries_dir'], misclassified_image_arr]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [final_result])
 
         delete_all_checkpoints(checkpoint_path_arr)
 
     sess.close()
-    return (test_accuracy*100)
+    return (test_accuracy * 100)
+
 
 def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     prepare_file_system()
+
+    # Print the FLAGS setting to logfile.csv
+    save_to_csv(GENERAL_SETTING['csvlogfile'],
+                [['Info', 'Step', 'Time', 'Train accuracy', 'Loss', '', "Train folds", "Test folds", "Test accuracy"]])
+    SETTINGS = [GENERAL_SETTING, MODEL_SETTING]
+    save_to_csv(GENERAL_SETTING['csvlogfile'], [SETTINGS])
 
     # Look at the folder structure, and create lists of all the images.
     image_lists = create_image_lists(GENERAL_SETTING['image_dir'])
@@ -1081,10 +1104,9 @@ def main(_):
                          ' - multiple classes are needed for classification.')
         return -1
 
-
     # Get model info and cached bottleneck
     pretrained_model_infos = []
-    for i in range (len(MODEL_SETTING['architecture'])):
+    for i in range(len(MODEL_SETTING['architecture'])):
         architecture = MODEL_SETTING['architecture'][i]
         pretrained_model_info = create_model_info(architecture)
         pretrained_model_infos.append(pretrained_model_info)
@@ -1098,21 +1120,21 @@ def main(_):
 
         with tf.Session(graph=graph_name) as sess_name:
             jpeg_data_tensor, decoded_image_tensor = add_jpeg_decoding(
-                pretrained_model_info['input_width'],  pretrained_model_info['input_height'],
-                pretrained_model_info['input_depth'],  pretrained_model_info['input_mean'],
+                pretrained_model_info['input_width'], pretrained_model_info['input_height'],
+                pretrained_model_info['input_depth'], pretrained_model_info['input_mean'],
                 pretrained_model_info['input_std'])
 
             cache_bottlenecks(sess_name, image_lists, GENERAL_SETTING['image_dir'],
                               GENERAL_SETTING['bottleneck_dir'], jpeg_data_tensor,
                               decoded_image_tensor, resized_image_tensor,
-                              bottleneck_tensor,  pretrained_model_info['architecture'])
+                              bottleneck_tensor, pretrained_model_info['architecture'])
             print("cached botteneck!, sess: ", sess_name)
             sess_name.close()
 
     # Do multiple testing
-    testing_accuracy_arr=[]
+    testing_accuracy_arr = []
 
-    for index in range(0,5):
+    for index in range(0, 30):
         # Choosing 2 random folds inside 10 folds and create testing and training folds
         testing_fold_names = []
         [testing_fold_index_1, testing_fold_index_2] = random.sample(range(1, 11), 2)
@@ -1123,21 +1145,24 @@ def main(_):
 
         training_fold_names = []
         for training_fold_index in [v for v in range(1, 11) if
-                                    (v != testing_fold_index_1 and v!= testing_fold_index_2)]:
+                                    (v != testing_fold_index_1 and v != testing_fold_index_2)]:
             training_fold_name = "fold" + str(training_fold_index)
             training_fold_names.append(training_fold_name)
 
         # For debug
-        print ('testing fold names: ', testing_fold_names, 'traning fold names: ', training_fold_names)
+        print('testing fold names: ', testing_fold_names, 'traning fold names: ', training_fold_names)
 
         testing_accuracy = training_operation(image_lists=image_lists, pretrained_model_infos=pretrained_model_infos,
-                               training_fold_names=training_fold_names, testing_fold_names=testing_fold_names)
+                                              training_fold_names=training_fold_names,
+                                              testing_fold_names=testing_fold_names)
         testing_accuracy_arr.append(testing_accuracy)
     average_testing_accuracy = sum(testing_accuracy_arr) / float(len(testing_accuracy_arr))
-    testing_accuracy_result = ['', '', '', '', '', '',average_testing_accuracy]
+    print("average test result", average_testing_accuracy)
+    std_dev_testing_accuracy = statistics.stdev(testing_accuracy_arr)
+    print("standard deviation of testing accuracy", std_dev_testing_accuracy)
+    testing_accuracy_result = ['', '', '', '', '', '', average_testing_accuracy, std_dev_testing_accuracy]
     save_to_csv(GENERAL_SETTING['csvlogfile'], [testing_accuracy_result])
 
+
 if __name__ == '__main__':
-
     tf.app.run(main=main)
-

@@ -22,9 +22,9 @@ from tensorflow.python.platform import gfile
 from tensorflow.python.util import compat
 
 ################## General Setting ######################
-csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_"+"PAPsmear_" + str(datetime.now()).replace(
+csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_"+"Hela_" + str(datetime.now()).replace(
     " ", "-") + ".csv"
-summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_"+"PAPsmear_"+str(datetime.now()).replace(" ", "-") + ".csv"
+summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_"+"Hela_"+str(datetime.now()).replace(" ", "-") + ".csv"
 GENERAL_SETTING = {
     'bottleneck_dir': '/tmp/bottleneck',
     'logits_dir': 'tmp/logits',
@@ -44,15 +44,47 @@ GENERAL_SETTING = {
     'validation_batch_size': -1,
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    'image_dir': '/home/duclong002/Dataset/JPEG_data/PAP_smear_JPEG/',
+    #'image_dir': '/home/duclong002/Dataset/JPEG_data/PAP_smear_JPEG/',
+    'image_dir': '/home/duclong002/Dataset/JPEG_data/Hela_JPEG/',
     'summaries_dir': summaries_directory
 }
 
 ###################### Model Setting #######################
+# MODEL_SETTINGS = [
+#     {
+#         'architecture': ['inception_v3'],
+#         'dropout_keep_prob': 0.8,
+#         'hidden_layer1_size': 50,
+#         'learning_rate': 0.075,
+#         'learning_rate_decay': 0.5,
+#         'train_batch_size': 50,
+#         'test_accuracies': []
+#     },
+#
+#     {
+#         'architecture': ['resnet_v2'],
+#         'dropout_keep_prob': 0.7,
+#         'hidden_layer1_size': 100,
+#         'learning_rate': 0.075,
+#         'learning_rate_decay': 0.33,
+#         'train_batch_size': 30,
+#         'test_accuracies': []
+#     },
+#
+#     {
+#         'architecture': ['inception_resnet_v2'],
+#         'dropout_keep_prob': 0.8,
+#         'hidden_layer1_size': 50,
+#         'learning_rate': 0.03,
+#         'learning_rate_decay': 0.33,
+#         'train_batch_size': 30,
+#         'test_accuracies': []
+#     }
+# ]
 MODEL_SETTINGS = [
     {
         'architecture': ['inception_v3'],
-        'dropout_keep_prob': 0.8,
+        'dropout_keep_prob': 0.6,
         'hidden_layer1_size': 50,
         'learning_rate': 0.075,
         'learning_rate_decay': 0.5,
@@ -63,20 +95,20 @@ MODEL_SETTINGS = [
     {
         'architecture': ['resnet_v2'],
         'dropout_keep_prob': 0.7,
-        'hidden_layer1_size': 100,
-        'learning_rate': 0.075,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.1,
+        'learning_rate_decay': 0.5,
+        'train_batch_size': 50,
         'test_accuracies': []
     },
 
     {
         'architecture': ['inception_resnet_v2'],
-        'dropout_keep_prob': 0.8,
+        'dropout_keep_prob': 0.6,
         'hidden_layer1_size': 50,
-        'learning_rate': 0.03,
+        'learning_rate': 0.1,
         'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
+        'train_batch_size': 100,
         'test_accuracies': []
     }
 ]
@@ -1284,7 +1316,7 @@ def main(_):
 
     naive_ensemble_logits_test_accuracies = []
     naive_ensemble_softmax_test_accuracies= []
-    for index in range(0, 2):
+    for index in range(0, 30):
         # Choosing 2 random folds inside 10 folds and create testing and training folds
         testing_fold_names = []
         [testing_fold_index_1, testing_fold_index_2] = random.sample(range(1, 11), 2)
