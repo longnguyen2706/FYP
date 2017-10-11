@@ -22,9 +22,11 @@ from tensorflow.python.platform import gfile
 from tensorflow.python.util import compat
 
 ################## General Setting ######################
-csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_"+"Hela_" + str(datetime.now()).replace(
+csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_" + "Hela_" + str(
+    datetime.now()).replace(
     " ", "-") + ".csv"
-summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_"+"Hela_"+str(datetime.now()).replace(" ", "-") + ".csv"
+summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_" + "Hela_" + str(
+    datetime.now()).replace(" ", "-") + ".csv"
 GENERAL_SETTING = {
     'bottleneck_dir': '/tmp/bottleneck',
     'logits_dir': 'tmp/logits',
@@ -44,7 +46,7 @@ GENERAL_SETTING = {
     'validation_batch_size': -1,
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    #'image_dir': '/home/duclong002/Dataset/JPEG_data/PAP_smear_JPEG/',
+    # 'image_dir': '/home/duclong002/Dataset/JPEG_data/PAP_smear_JPEG/',
     'image_dir': '/home/duclong002/Dataset/JPEG_data/Hela_JPEG/',
     'summaries_dir': summaries_directory
 }
@@ -83,6 +85,16 @@ GENERAL_SETTING = {
 # ]
 MODEL_SETTINGS = [
     {
+        'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'],
+        'dropout_keep_prob': 0.7,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.075,
+        'learning_rate_decay': 0.5,
+        'train_batch_size': 30,
+        'test_accuracies': []
+    },
+
+    {
         'architecture': ['inception_v3'],
         'dropout_keep_prob': 0.6,
         'hidden_layer1_size': 50,
@@ -110,7 +122,8 @@ MODEL_SETTINGS = [
         'learning_rate_decay': 0.33,
         'train_batch_size': 100,
         'test_accuracies': []
-    }
+    },
+
 ]
 
 # These are all parameters that are tied to the particular model architecture
@@ -556,9 +569,12 @@ def get_random_cached_bottlenecks(image_lists, how_many, categories,
                             ground_truths.append(ground_truth)
                             filenames.append(image_name)
 
-                    merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
-
-                    bottlenecks.append(merged_bottleneck)
+                    # merged_bottleneck = np.reshape(merged_bottleneck, merged_bottleneck_shape)
+                    merged_bottleneck_reshape = []
+                    for sub_arr in merged_bottleneck:
+                        for item in sub_arr:
+                            merged_bottleneck_reshape.append(item)
+                    bottlenecks.append(merged_bottleneck_reshape)
     return bottlenecks, ground_truths, filenames
 
 
@@ -1198,19 +1214,20 @@ def training_operation(image_lists, pretrained_model_infos, MODEL_SETTING, train
     sess.close()
     return (test_accuracy * 100), last_layer_train_results, last_layer_test_results
 
+
 def add_naive_averaging_evaluation(class_count, is_logit):
     with tf.name_scope('naive_averaging_accuracy'):
         result_matrix = tf.placeholder(tf.float32,
-                                [None, class_count],
-                                name = 'result_matrix')
+                                       [None, class_count],
+                                       name='result_matrix')
         ground_truth_matrix = tf.placeholder(tf.float32,
                                              [None, class_count],
                                              name='grouth_truth_matrix')
         with tf.name_scope('correct_prediction'):
             if not is_logit:
-                naive_averaging_prediction = tf.argmax(result_matrix,1)
+                naive_averaging_prediction = tf.argmax(result_matrix, 1)
 
-            else: # use logit result. Need to do softmax first
+            else:  # use logit result. Need to do softmax first
                 after_softmax_result = tf.nn.softmax(result_matrix, name='after_softmax_result')
                 naive_averaging_prediction = tf.argmax(after_softmax_result, 1)
             correct_prediction = tf.equal(
@@ -1221,9 +1238,10 @@ def add_naive_averaging_evaluation(class_count, is_logit):
 
     return result_matrix, ground_truth_matrix, naive_averaging_eval_step, naive_averaging_prediction
 
+
 def naive_averaging_result(class_count, all_last_layer_test_results, is_logit):
-    average_final_results= []
-    ground_truths= []
+    average_final_results = []
+    ground_truths = []
     # print(all_last_layer_test_results)
 
     # base_learner_result_length = len(all_last_layer_test_results[0])
@@ -1260,9 +1278,8 @@ def naive_averaging_result(class_count, all_last_layer_test_results, is_logit):
     for item in all_last_layer_test_results[0]:
         ground_truths.append(item['ground_truth'])
 
-    print ("Length of the average final result and groundtruth: ",
-           len(average_final_results), len(ground_truths) )
-
+    print("Length of the average final result and groundtruth: ",
+          len(average_final_results), len(ground_truths))
 
     with tf.Session() as sess:
         result_matrix, ground_truth_matrix, naive_averaging_eval_step, naive_averaging_prediction = add_naive_averaging_evaluation(
@@ -1275,7 +1292,7 @@ def naive_averaging_result(class_count, all_last_layer_test_results, is_logit):
         tf.logging.info('Final test accuracy = %.1f%% (N=%d)' %
                         (test_accuracy * 100, len(average_final_results)))
 
-    return test_accuracy*100
+    return test_accuracy * 100
     sess.close()
 
 
@@ -1311,11 +1328,10 @@ def main(_):
                          ' - multiple classes are needed for classification.')
         return -1
 
-
     # Train each base learner, get the test accuracy and last layer train and test result
 
     naive_ensemble_logits_test_accuracies = []
-    naive_ensemble_softmax_test_accuracies= []
+    naive_ensemble_softmax_test_accuracies = []
     for index in range(0, 30):
         # Choosing 2 random folds inside 10 folds and create testing and training folds
         testing_fold_names = []
@@ -1383,28 +1399,31 @@ def main(_):
 
         # Ensemble training
 
-        naive_averaging_with_logit_test_accurary = naive_averaging_result(class_count=class_count,all_last_layer_test_results=all_last_layer_test_results,
-                                       is_logit=True)
-        naive_averaging_with_softmax_test_accurary = naive_averaging_result(class_count=class_count,all_last_layer_test_results=all_last_layer_test_results,
-                                       is_logit=False)
+        naive_averaging_with_logit_test_accurary = naive_averaging_result(class_count=class_count,
+                                                                          all_last_layer_test_results=all_last_layer_test_results,
+                                                                          is_logit=True)
+        naive_averaging_with_softmax_test_accurary = naive_averaging_result(class_count=class_count,
+                                                                            all_last_layer_test_results=all_last_layer_test_results,
+                                                                            is_logit=False)
         naive_ensemble_logits_test_accuracies.append(naive_averaging_with_logit_test_accurary)
         naive_ensemble_softmax_test_accuracies.append(naive_averaging_with_softmax_test_accurary)
         # Print and save to file
-        print("base learner testing accuracy",testing_accuracy)
-        print("naive_averaging_with_logit_test_accurary",naive_averaging_with_logit_test_accurary)
+        print("base learner testing accuracy", testing_accuracy)
+        print("naive_averaging_with_logit_test_accurary", naive_averaging_with_logit_test_accurary)
         print("naive_averaging_with_softmax_test_accurary", naive_averaging_with_softmax_test_accurary)
 
         base_learner_test_results = ['', datetime.now(), '', '', '', '',
-                        'base_learner_test_accuracy', testing_accuracy]
+                                     'base_learner_test_accuracy', testing_accuracy]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [base_learner_test_results])
 
         naive_averaging_with_logit_result = ['', datetime.now(), '', '', '', '',
-                        'naive_averaging_with_logit_test_accuracy', naive_averaging_with_logit_test_accurary*100]
+                                             'naive_averaging_with_logit_test_accuracy',
+                                             naive_averaging_with_logit_test_accurary * 100]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [naive_averaging_with_logit_result])
 
         naive_averaging_with_softmax_result = ['', datetime.now(), '', '', '', '',
-                                             'naive_averaging_with_softmax_test_accuracy',
-                                             naive_averaging_with_softmax_test_accurary * 100]
+                                               'naive_averaging_with_softmax_test_accuracy',
+                                               naive_averaging_with_softmax_test_accurary * 100]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [naive_averaging_with_softmax_result])
 
     # Mean and stddev. Save to file
@@ -1417,4 +1436,3 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run(main=main)
-

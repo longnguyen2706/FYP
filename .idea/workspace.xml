@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e6448f5f-2b26-4173-9bf9-1b517d65a73b" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/Paper/InceptionNetv3.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_retraining/retrain_cv.py" afterPath="$PROJECT_DIR$/image_retraining/retrain_cv.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_retraining/retrain_ensemble.py" afterPath="$PROJECT_DIR$/image_retraining/retrain_ensemble.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_retraining/run_retraincv.sh" afterPath="$PROJECT_DIR$/image_retraining/run_retraincv.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,9 +63,21 @@
       <file leaf-file-name="retrain_ensemble.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/image_retraining/retrain_ensemble.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1159">
-              <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="93" selection-end-line="26" selection-end-column="93" />
+            <state relative-caret-position="285">
+              <caret line="477" column="51" lean-forward="true" selection-start-line="477" selection-start-column="51" selection-end-line="477" selection-end-column="51" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multiple_random_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image_retraining/multiple_random_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="510" column="57" lean-forward="true" selection-start-line="504" selection-start-column="0" selection-end-line="510" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,56 +98,11 @@
         <entry file="file://$PROJECT_DIR$/image_retraining/retrain_cv.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <marker date="1507632326774" expanded="true" signature="558:559" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="44687:48963" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="44687:49004" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="44687:50970" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="44687:51085" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="44689:48963" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="45211:46877" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="45269:45547" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="45977:46877" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="46026:46159" ph="&quot;...&quot;" />
-                <marker date="1507632326774" expanded="true" signature="46907:48963" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="47026:47392" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="47844:48963" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="47893:48054" ph="&quot;...&quot;" />
-                <marker date="1507632326774" expanded="true" signature="49014:49133" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="49386:49489" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="49670:49798" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50023:50561" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50152:50561" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50220:50561" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50305:50397" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50452:50559" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50628:50756" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="50843:50970" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="51099:54729" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="51233:51402" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="51549:51650" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="51675:51886" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="51946:53210" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="52272:52462" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="52521:53210" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="53458:54132" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="53666:53792" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="54757:61522" ph="..." />
-                <marker date="1507632326774" expanded="true" signature="55410:55515" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="56977:57248" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="57366:57763" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="57878:57960" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="58082:58150" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="58262:58345" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="58514:58675" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="58976:59065" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="59162:59250" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="59386:59501" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="59609:59727" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="59840:59969" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1507632326774" expanded="true" signature="60079:60726" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                <marker date="1507705487150" expanded="true" signature="558:559" ph="..." />
+                <marker date="1507705487150" expanded="true" signature="44687:48963" ph="..." />
               </folding>
             </state>
           </provider>
@@ -175,16 +145,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2394">
               <caret line="137" column="4" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nn_ops.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/nn_ops.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27341">
-              <caret line="1458" column="4" lean-forward="false" selection-start-line="1458" selection-start-column="4" selection-end-line="1458" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -281,8 +241,10 @@
     </layout>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="287" />
+    <option name="y" value="372" />
     <option name="width" value="1600" />
-    <option name="height" value="1200" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -680,9 +642,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1600" height="1200" extended-state="6" />
+    <frame x="287" y="372" width="1600" height="1049" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124530666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -744,13 +707,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tutorial/deep_mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2016">
-          <caret line="96" column="61" lean-forward="false" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.4/dist-packages/tensorflow/python/ops/math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -984,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,63 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_retraining/retrain_cv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1507632326774" expanded="true" signature="558:559" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="44687:48963" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="44687:49004" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="44687:50970" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="44687:51085" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="44689:48963" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="45211:46877" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="45269:45547" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="45977:46877" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="46026:46159" ph="&quot;...&quot;" />
-            <marker date="1507632326774" expanded="true" signature="46907:48963" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="47026:47392" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="47844:48963" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="47893:48054" ph="&quot;...&quot;" />
-            <marker date="1507632326774" expanded="true" signature="49014:49133" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="49386:49489" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="49670:49798" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50023:50561" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50152:50561" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50220:50561" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50305:50397" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50452:50559" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50628:50756" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="50843:50970" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="51099:54729" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="51233:51402" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="51549:51650" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="51675:51886" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="51946:53210" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="52272:52462" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="52521:53210" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="53458:54132" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="53666:53792" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="54757:61522" ph="..." />
-            <marker date="1507632326774" expanded="true" signature="55410:55515" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="56977:57248" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="57366:57763" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="57878:57960" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="58082:58150" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="58262:58345" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="58514:58675" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="58976:59065" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="59162:59250" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="59386:59501" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="59609:59727" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="59840:59969" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1507632326774" expanded="true" signature="60079:60726" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image_retraining/run_retraincv.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -1116,10 +1014,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/image_retraining/retrain_cv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1507705487150" expanded="true" signature="558:559" ph="..." />
+            <marker date="1507705487150" expanded="true" signature="44687:48963" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image_retraining/multiple_random_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="510" column="57" lean-forward="true" selection-start-line="504" selection-start-column="0" selection-end-line="510" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image_retraining/retrain_ensemble.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1159">
-          <caret line="26" column="93" lean-forward="false" selection-start-line="26" selection-start-column="93" selection-end-line="26" selection-end-column="93" />
+        <state relative-caret-position="285">
+          <caret line="477" column="51" lean-forward="true" selection-start-line="477" selection-start-column="51" selection-end-line="477" selection-end-column="51" />
           <folding />
         </state>
       </provider>

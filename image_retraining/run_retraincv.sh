@@ -19,12 +19,12 @@ do
 done
 
 # Setting hyper param array
-learning_rate_arr=(0.1 0.075) #(0.2) #0.075
+learning_rate_arr=(0.2 0.075) #(0.2) #0.075
 how_many_training_steps=10000
 testing_percentage_arr=(20)
 train_batch_size_arr=(50 100)
-hidden_layer1_size_arr=(50 100) #2
-dropout_keep_prob_arr=(0.7 0.8)
+hidden_layer1_size_arr=(30 50 100) #2
+dropout_keep_prob_arr=(0.6 0.8)
 learning_rate_decay_arr=(0.33 0.5) #(0.33 0.5 0.66) #0.66
 
 #learning_rate_arr=(0.1 0.05)
