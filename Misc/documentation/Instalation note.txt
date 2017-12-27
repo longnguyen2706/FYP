@@ -1,0 +1,198 @@
+######################	NOTE	##########################
+
+- The code is run on Unbuntu 14.04/14.05 machine with Tensorflow Library. The following installation procedure has been tested on 3 different machines. Please follow it carefully.
+- To be able to run the code, the following steps need to be done:
+	- Install Ubuntu 14.04/14.05
+	- Install NVIDIA driver
+	- Install CUDA library
+	- Install CuDNN
+	- Install Tensorflow
+	- Install python3-dev
+	- Install PIL library
+
+
+#################### INSTALLATION #######################
+
+########## INSTALL UBUNTU ###################
+- Follow this official guideline:
+	http://howtoubuntu.org/how-to-install-ubuntu-14-04-trusty-tahr
+
+
+######### INSTALL NVIDIA driver ##############
+- first you need to find your correct nvidia driver version 
+- sudo apt-get update
+- sudo apt-get dist-upgrade
+
+- remember to disable the fast boot mode (window) + secure boot mode (bios)
+
+- remove all nvidia and bumblebee and nouveau installed:
+	sudo apt-get remove --purge nvidia*
+	sudo apt-get remove --purge bumblebee*
+	sudo apt-get --purge remove xserver-xorg-video-nouveau
+	sudo apt-get remove --purge nvidia-prime
+
+	sudo apt-get install linux-source && sudo apt-get install linux-headers-$(uname -r)
+	sudo cp /etc/modprobe.d/blacklist.conf /etc/modprobe.d/blacklist.conf.bak
+ 	sudo gedit /etc/modprobe.d/blacklist.conf
+
+- edit the file to blacklist the following:
+	blacklist nouveau
+	blacklist lbm-nouveau
+	blacklist nvidia-173
+	blacklist nvidia-96
+	blacklist nvidia-current
+	blacklist nvidia-173-updates
+	blacklist nvidia-96-updates
+	alias nvidia nvidia_current_updates
+	alias nouveau off
+	alias lbm-nouveau off
+	options nouveau modeset=0
+
+reboot
+
+- BOOT TO TTY1 (Ctrl+Alt+F1):
+	sudo service lightdm stop
+	add-apt-repository ppa:graphics-drivers/ppa
+	apt-get update
+	apt-get install nvidia-367(the 375 version will be installed but cannot use sudo apt-get install nvidia-375 straightly) 
+
+reboot
+
+CHECK:
+nvidia-settings
+
+############# Install CUDA ###############################
+DOWNLOAD 
+	Download cuda 8 from NVIDIA
+	cd Downloads/
+	sudo dpkg -i cuda-repo-ubuntu1404-8-0-local_8.0.44-1_amd64.deb (depend on name of the version)
+	sudo apt-get update
+	sudo apt-get install cuda
+
+CHECK:
+	nvidia smi
+	cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+	sudo make
+	sudo ./deviceQuery
+
+./deviceQuery Starting...
+
+ CUDA Device Query (Runtime API) version (CUDART static linking)
+
+Detected 1 CUDA Capable device(s)
+
+Device 0: "GeForce GTX 950M"
+  CUDA Driver Version / Runtime Version          8.0 / 8.0
+  CUDA Capability Major/Minor version number:    5.0
+  Total amount of global memory:                 4044 MBytes (4240965632 bytes)
+  ( 5) Multiprocessors, (128) CUDA Cores/MP:     640 CUDA Cores
+  GPU Max Clock rate:                            1124 MHz (1.12 GHz)
+  Memory Clock rate:                             900 Mhz
+  Memory Bus Width:                              128-bit
+  L2 Cache Size:                                 2097152 bytes
+  Maximum Texture Dimension Size (x,y,z)         1D=(65536), 2D=(65536, 65536), 3D=(4096, 4096, 4096)
+  Maximum Layered 1D Texture Size, (num) layers  1D=(16384), 2048 layers
+  Maximum Layered 2D Texture Size, (num) layers  2D=(16384, 16384), 2048 layers
+  Total amount of constant memory:               65536 bytes
+  Total amount of shared memory per block:       49152 bytes
+  Total number of registers available per block: 65536
+  Warp size:                                     32
+  Maximum number of threads per multiprocessor:  2048
+  Maximum number of threads per block:           1024
+  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+  Maximum memory pitch:                          2147483647 bytes
+  Texture alignment:                             512 bytes
+  Concurrent copy and kernel execution:          Yes with 1 copy engine(s)
+  Run time limit on kernels:                     Yes
+  Integrated GPU sharing Host Memory:            No
+  Support host page-locked memory mapping:       Yes
+  Alignment requirement for Surfaces:            Yes
+  Device has ECC support:                        Disabled
+  Device supports Unified Addressing (UVA):      Yes
+  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0
+  Compute Mode:
+     < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Version = 8.0, NumDevs = 1, Device0 = GeForce GTX 950M
+Result = PASS
+
+SEE MORE:
+https://devtalk.nvidia.com/default/topic/617414/-solved-cuda-driver-version-is-insufficient-for-cuda-runtime-version-fedora-18-rpmfusion-driver/
+
+https://devtalk.nvidia.com/default/topic/977617/cuda-driver-version-is-insufficient-for-cuda-runtime-version/
+
+##################### INSTALL CUDNN ################################
+
+Download CUDnn 7.5 lib for Ubuntu (.taz file) from:
+https://developer.nvidia.com/rdp/cudnn-download
+
+cd ~/Downloads/cuda
+sudo cp lib64/* /usr/local/cuda/lib64/
+sudo cp include/cudnn.h /usr/local/cuda/include/ 
+
+(from https://gist.github.com/vbalnt/a0f789d788a99bfb62b61cb809246d64)
+
+
+OR (better)
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+(from: https://alliseesolutions.wordpress.com/2016/07/05/how-to-install-gpu-tensorflow-0-9-from-sources-ubuntu-14-04/)
+
+
+UPDATE BASHRC:
+gedit ~/.bashrc
+
+add to the end of the bashrc file:
+export PATH=/usr/local/cuda/bin:${PATH}
+export MANPATH=/usr/local/cuda/man:${MANPATH}
+
+# add cuda libraries to library path
+if [[ "${LD_LIBRARY_PATH}" != "" ]]
+then
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+else
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64
+fi
+
+save and close
+
+####################### Install TENSORFLOW ############################
+Follow official tensorflow documentation: 
+	https://www.tensorflow.org/install/install_linux
+
+pip3 install tensorflow (CPU only)
+pip3 install tensorflow-gpu (GPU)
+
+TEST:
+$python3
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+
+or: 
+https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/mnist/mnist_deep.py
+
+
+################## Install Python dev, PIL and other lib #######################
+- install pip:
+	sudo apt-get install python3-pip
+
+- install python dev:
+	sudo apt-get install python-dev
+
+- install hdpy5
+	sudo pip3 install cython
+	sudo apt-get install libhdf5-dev
+	sudo pip3 install h5py
+
+- install PIL:
+	- Follow official doc: http://pillow.readthedocs.io/en/3.0.x/installation.html
+		sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+
+
+
+

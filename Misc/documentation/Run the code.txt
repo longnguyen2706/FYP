@@ -1,0 +1,93 @@
+######################################	TODO	######################################
+
+	- Please follow the instalation documentation first	
+	- Download the pretrained_model folder that contains all pretrained nets and put to /home/:
+		https://entuedu-my.sharepoint.com/personal/duclong002_e_ntu_edu_sg/_layouts/15/guestaccess.aspx?folderid=18099680a3cf8478aae5e0f8e0c1a68f9&authkey=AfVBh9eWwLris58vCromluM
+	- Download the dataset. If you use the original dataset, please convert it to JPEG. If you download my already converted the dataset, please ignore the conversion step.
+		https://entuedu-my.sharepoint.com/personal/duclong002_e_ntu_edu_sg/_layouts/15/guestaccess.aspx?folderid=178d303a5c19c4fc587bc1165a2cdb048&authkey=AZ-nPruN5Bm_DrQ_f9HAyaw
+
+##############################	CODE ORGANIZATION ###################################
+
+
+- data_conversion:
+	- for converting the data from various format (.bmp, .tiff, .png) to jpeg
+	- to run the conversion, simply copy the correct conversion file to the data folder. For example, if the dataset is organized as: Dataset -> category_1, category_2 ..., simply put the conversion file to Dataset folder and run it.
+	- the jpeg file will be put in the same folder (category_1, category_2 ...) as the original data. You need to manual copy all the jpeg files and put to new folder with the same format: Dataset_jpeg -> category_1, category_2 ... A good way to do so is to just copy the Dataset folder, go to each category, sort by file type and delete all the original file type (such as .tiff/.bmp).
+
+
+- pretrained_model_handing:
+	- contain the code to handle the pretrained nets downloaded from internet:
+		- some pretrained network is provided in .cpkt format, which is just the checkpoint. To recover the whole network, we need to run the code which generated the checkpoint. The code are train_inception_resnet.py, train_resnet_v2.py, train_vgg19.py. the slim folder is needed as the external library for these code to run
+		- some pretrained network is trained with keras. the keras_model_export.py do the same task as the above files: extracting the pretrained model to .pb format that our code can read
+		- to see how the pretrained network structured, you can run export_pbtxt.py (and/or) view_graphdef.py. The printed network result is already copied to .txt file inside pretrained_model folder, so you may just ignore these code file.
+
+
+- slim: 
+	- just an external library for the code in pretrained_model_handling. Please do not modify it. 
+
+
+- image_retraining:
+	- contains all main code for the paper. Please see the description for each file below:
+		- retrain.py: 
+			- it is the first version of our code that use pretrained inceptionv3 net. it is not the final version of the code that we used in the paper, so you can just skip it.
+			- The model is trained normally: 80% training and 20% testing, without cross-validation. (the actual number can be set in run.sh script file)
+			- the file will log the model performance during training and testing to .csv file which can be read by excel.
+			- if you want to try, you can either run the script file run.sh or type on terminal (you should set the correct path to retrain.py, the data dir image_dir, ... and also your customized parameter):
+				python3 /home/long/FYP/image_retraining/retrain.py --bottleneck_dir '/tmp/bottleneck' --csvlogfile '/home/long/retrain_logs/logfile/test.csv' --dropout_keep_prob 0.69999999 --hidden_layer1_size 100 --how_many_training_steps 2000 --image_dir '/home/long/Dataset/JPEG_data/CHO_JPEG' --intermediate_output_graphs_dir '/tmp/intermediate_graph/' --learning_rate 0.05 --output_graph '/tmp/output_graph.pb' --ou tput_labels '/tmp/output_labels.txt' --summaries_dir '/home/long/retrain_logs/test' --test_batch_size -1 --testing_percentage 20 --train_batch_size 100 --model_dir '/home/long/pretrained_model/'
+##########################################
+
+		- run.sh:
+			- it is the script file that will do the grid search for hyper-parameter. 
+			- the principle of this one is quite simple: it loops through all the possible set of parameter you provided. At each set of parameter, it will execute the command similar to what you can type above to run the script manually, provide the retrain.py the parameter setting. The script will only terminated when it executed all the possible set of parameter. The performance will be recorded to .csv file along the way. To find the best parameter set, you should use excel to sort and manually record it. You may change the parameter setting inside the file. Please read the comment inside the file for more information.
+			- To run the script file:
+				- open a new terminal: Ctrl+Alt+T
+				- (if first time running) Give execute permission to your script:chmod +x /path/to/run.sh
+				- run: /path/to/run.sh
+#########################################
+
+		- retrain_cv_2.py: 
+			- it is the final version that we used in our paper. The code does 5 fold cross validation during training:
+				- first, the dataset is divided equally into 5 folds (to be more clear, for each category, number of image in fold1 = number of image in fold2 ...).
+				- the code repeatly take a fold inside the 5 folds as validation set (20% of the data) and the rest as the training set (80% of the data). The model is then trained with early stopping and the performance on the validation set is then recorded. 
+				- the code output the average validation performance over the 5 folds (cross - validation performance). This result will be used to choose the best hyper parameter
+				- at the final step before terminate, the code do a testing with 4 first folds as training data and the last fold as testing data. It reloads the best checkpoint during cross validation training and then use this model to run the test. It is just for reference of how close our cross validation performance will be with respect to a random test. We will not use this result for deciding the hyper parameter
+			- you can set the model that you want to train by uncomment/comment the model name in ARCHITECTURE section. For now, the model is set to 'resnet_v2", which means training the base model with pretrained net resnetv2
+			- to run the file, you can either run run_retrain_cv_2.sh or type as below in terminal (you should set the correct path to retrain.py, the data dir image_dir, ... and also your customized parameter):
+				python3 /home/long/FYP/image_retraining/retrain_cv_2.py --bottleneck_dir '/tmp/bottleneck' --csvlogfile '/home/long/retrain_logs/logfile/test.csv' --dropout_keep_prob 0.69999999 --hidden_layer1_size 100 --how_many_training_steps 2000 --image_dir '/home/long/Dataset/JPEG_data/CHO_JPEG' --intermediate_output_graphs_dir '/tmp/intermediate_graph/' --learning_rate 0.05 --output_graph '/tmp/output_graph.pb' --ou tput_labels '/tmp/output_labels.txt' --summaries_dir '/home/long/retrain_logs/test' --test_batch_size -1 --testing_percentage 20 --train_batch_size 100 --model_dir '/home/long/pretrained_model/'
+####################################
+
+		- run_retrain_cv_2.sh: 
+			- it is the script file that will do the grid search for hyper-parameter. 
+			- the principle of this one is quite simple: it loops through all the possible set of parameter you provided. At each set of parameter, it will execute the command similar to what you can type above to run the script manually, provide the retrain.py the parameter setting. The script will only terminated when it executed all the possible set of parameter. The performance will be recorded to .csv file along the way. To find the best parameter set, you should use excel to sort and manually record it. You may change the parameter setting inside the file. Please read the comment inside the file for more information.
+			- To run the script file:
+				- open a new terminal: Ctrl+Alt+T
+				- (if first time running) Give execute permission to your script:chmod +x /path/to/run_retrain_cv_2.sh
+				- run: /path/to/run_retrain_cv_2.sh
+###################################
+
+		- test_all_models.py
+			- This file will do the performance test for various model listed below. What happen is various models will be trained again with the best hyper parameter obtained by the gridsearch and then these trained nets are tested at their checkpoint. The model will create .csv file that records all model performances (including the average , the stddev of all models over 30 times of random initialization) :
+				+ 3 base models
+				+ feature concat model
+				+ naive averaging model (in 2 ways: averaging logit layer and averaging softmax layer)
+					+ averaging 3 base models
+					+ averaging 3 base models and the feature concat model
+
+			- The parameter setting for each model is obtained by running the grid search beforehand (running run_retrain_cv_2.sh). For each dataset:
+				- Run the script with each model to find the best parameter
+				- Manually copy the parameter setting to the MODEL_SETTINGS
+				- For example, the current setting is the best for PAP_smear dataset. To train with the best setting for Hela dataset, simply comment out the PAP_smear dataset section and uncomment Hela dataset section
+
+			- To run the file:
+				- Provide the correct directory for csv_log_directory, summaries_directory, checkpoint_dir, model_dir, image_dir. Recommendation: just put the code in your home folder and replace '/home/long/' with '/home/<your_user_name>/'. For ex, if your username is admin, change the checkpoint_dir:
+					- From:  'checkpoint_dir': '/home/long/checkpoints'
+					- To: 'checkpoint_dir': '/home/admin/checkpoints'
+				- Note that you need to set the following directories correctly:
+					- 'model_dir': where the pretrained model located. 
+					- 'image_dir': where the dataset (in JPEG) is located.
+				- To run the file, simply:
+					- open a new terminal: Ctrl+Alt+T
+					- navigate to the file directory: cd /FYP/image_retraining/
+					- run: python3 test_all_models.py
+
+		

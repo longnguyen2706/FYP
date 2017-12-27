@@ -169,7 +169,7 @@ def run(dataset_dir):
   testing_filename = _get_output_filename(dataset_dir, 'test')
 
   if tf.gfile.Exists(training_filename) and tf.gfile.Exists(testing_filename):
-    print('Dataset files already exist. Exiting without re-creating them.')
+    print('data_conversion files already exist. Exiting without re-creating them.')
     return
 
   dataset_utils.download_and_uncompress_tarball(_DATA_URL, dataset_dir)

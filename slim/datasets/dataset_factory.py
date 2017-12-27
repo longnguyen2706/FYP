@@ -32,7 +32,7 @@ datasets_map = {
 
 
 def get_dataset(name, split_name, dataset_dir, file_pattern=None, reader=None):
-  """Given a dataset name and a split_name returns a Dataset.
+  """Given a dataset name and a split_name returns a data_conversion.
 
   Args:
     name: String, the name of the dataset.
@@ -43,7 +43,7 @@ def get_dataset(name, split_name, dataset_dir, file_pattern=None, reader=None):
       reader defined by each dataset is used.
 
   Returns:
-    A `Dataset` class.
+    A `data_conversion` class.
 
   Raises:
     ValueError: If the dataset `name` is unknown.

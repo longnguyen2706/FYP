@@ -5,11 +5,11 @@ echo
 echo "<<<<<----- $(date) Running ${0} script file ----->>>>>"
 
 # Setting dir #
-HOME_DIR="/home/duclong002/"
-JPEG_DATA_DIR=$HOME_DIR"Dataset/JPEG_data/"
-CODE_DIR=$HOME_DIR"FYP/image_retraining/"
+HOME_DIR="/home/duclong002/" # provide your home directory
+JPEG_DATA_DIR=$HOME_DIR"data_conversion/JPEG_data/" # provide your dataset directory
+CODE_DIR=$HOME_DIR"FYP/image_retraining/" # provide where your retrain.py is. If you not refactor the code, please don't change it
 #DATASET_NAME=("BreastCancerCell_JPEG" "CHO_JPEG" "Hela_JPEG")
-DATASET_NAME=("Hela_JPEG")
+DATASET_NAME=("Hela_JPEG") # provide the dataset name to look for
 
 # print out name of the datasets will be used
 echo "The program will do training on these dataset:"
@@ -18,14 +18,15 @@ do
     printf "    %s \t" "${DATASET_NAME[$ix]}"
 done
 
-# Setting hyper param array
-learning_rate_arr=(0.1) #(0.2) #0.075
-how_many_training_steps=10000
-testing_percentage_arr=(20)
-train_batch_size_arr=(50 100)
-hidden_layer1_size_arr=(50 100) #2
-dropout_keep_prob_arr=(0.7)
-learning_rate_decay_arr=(0.66) #(0.33 0.5 0.66) #0.66
+# Setting hyper param array. The script will loop through each array and do the training with such parameter.
+# You should calculate how many cases that will be executed and don't try too large number.
+learning_rate_arr=(0.1) #(0.2) #0.075  # set the learning rate value
+how_many_training_steps=10000 # set the maximum training steps before terminate
+testing_percentage_arr=(20) # set how much percentage of the original data is for testing
+train_batch_size_arr=(50 100) # set how much percentage of the original data is for validation
+hidden_layer1_size_arr=(50 100)  # set the minibatch size
+dropout_keep_prob_arr=(0.7) # set numnber of neuron in the hidden layer
+learning_rate_decay_arr=(0.66) #(0.33 0.5 0.66) #0.66 # set the keep prob of the dropout
 
 #learning_rate_arr=(0.1 0.05)
 #how_many_training_steps=2000
@@ -102,13 +103,3 @@ do
         done
     done
 done
-#for run in {1..10}
-#do
-#  command
-#done
-#
-#for f in *
-#do
-#   i=$(awk 'NR==1{print $1;exit}' $f)
-#   myexec $i myfile.extension
-#done

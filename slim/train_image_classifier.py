@@ -161,7 +161,7 @@ tf.app.flags.DEFINE_float(
     'If left as None, then moving averages are not used.')
 
 #######################
-# Dataset Flags #
+# data_conversion Flags #
 #######################
 
 tf.app.flags.DEFINE_string(

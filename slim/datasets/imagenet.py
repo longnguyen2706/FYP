@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Provides data for the ImageNet ILSVRC 2012 Dataset plus some bounding boxes.
+"""Provides data for the ImageNet ILSVRC 2012 data_conversion plus some bounding boxes.
 
 Some images have one or more bounding boxes associated with the label of the
 image. See details here: http://image-net.org/download-bboxes
@@ -127,7 +127,7 @@ def get_split(split_name, dataset_dir, file_pattern=None, reader=None):
     reader: The TensorFlow reader type.
 
   Returns:
-    A `Dataset` namedtuple.
+    A `data_conversion` namedtuple.
 
   Raises:
     ValueError: if `split_name` is not a valid train/test split.
