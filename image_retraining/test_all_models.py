@@ -20,26 +20,27 @@ from tensorflow.python.framework import graph_util
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.platform import gfile
 from tensorflow.python.util import compat
+from sklearn.metrics import confusion_matrix
 
 ################## General Setting #####################
 # This section is to set the general setting for all models, i.e.: log file dir, summary dir, image dir ...
 # Set where to write the csv file to. The file contains the printout of model performance every few thousands steps
-csv_log_directory = '/home/long/retrain_logs/logfile/' + "test_" + "ensemble_4_" + "PAPSmear_" + str(
+csv_log_directory = '/mnt/6B7855B538947C4E/retrain_logs/logfile/' + "test_" + "ensemble_4_" + "Hela_" + str(
     datetime.now()).replace(
     " ", "-") + ".csv"
 # Set where to write the summary file to. The file contains the model logs in graph form  which can be visualized by tensorboard
-summaries_directory = '/home/long/retrain_logs/ensemble/' + "test_" + "ensemble_4_" + "PAPsmear_" + str(
+summaries_directory = '/mnt/6B7855B538947C4E/retrain_logs/ensemble/' + "test_" + "ensemble_4_" + "Hela_" + str(
     datetime.now()).replace(" ", "-") + ".csv"
 
 GENERAL_SETTING = {
     'bottleneck_dir': '/tmp/bottleneck',
     'logits_dir': 'tmp/logits',
-    'checkpoint_dir': '/home/long/checkpoints', # The directory to write the temporary checkpoints to
+    'checkpoint_dir': '/mnt/6B7855B538947C4E/checkpoints', # The directory to write the temporary checkpoints to
     'early_stopping_n_steps': 5,
     'eval_step_interval': 100,
     'final_tensor_name': 'final_result',
     'flip_left_right': False,
-    'model_dir': '/home/long/pretrained_model/', # The directory of the downloaded pretrained nets (ex: resnet, inceptionv3 ...)
+    'model_dir': '/mnt/6B7855B538947C4E/pretrained_model/', # The directory of the downloaded pretrained nets (ex: resnet, inceptionv3 ...)
     'output_labels': '/tmp/output_labels.txt',
     'print_misclassified_test_images': True,
     'random_brightness': 0, # No data augmentation
@@ -50,7 +51,7 @@ GENERAL_SETTING = {
     'validation_batch_size': -1, # In every validation step, all images in the validation set are used to validate the model performance
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    'image_dir': '/home/long/data_conversion/JPEG_data/PAP_smear_JPEG/', # !Important: set the dataset directory
+    'image_dir': '/mnt/6B7855B538947C4E/Dataset/JPEG_data/Hela_JPEG/', # !Important: set the dataset directory
     #'image_dir': '/home/duclong002/data_conversion/JPEG_data/Hela_JPEG/',
     'summaries_dir': summaries_directory
 }
@@ -78,27 +79,27 @@ MODEL_SETTINGS = [
         'learning_rate_decay': 0.5,
         'train_batch_size': 50,
         'test_accuracies': []
-    },
-
-    {
-        'architecture': ['resnet_v2'],
-        'dropout_keep_prob': 0.7,
-        'hidden_layer1_size': 100,
-        'learning_rate': 0.075,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
-        'test_accuracies': []
-    },
-
-    {
-        'architecture': ['inception_resnet_v2'],
-        'dropout_keep_prob': 0.8,
-        'hidden_layer1_size': 50,
-        'learning_rate': 0.03,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
-        'test_accuracies': []
     }
+
+    # {
+    #     'architecture': ['resnet_v2'],
+    #     'dropout_keep_prob': 0.7,
+    #     'hidden_layer1_size': 100,
+    #     'learning_rate': 0.075,
+    #     'learning_rate_decay': 0.33,
+    #     'train_batch_size': 30,
+    #     'test_accuracies': []
+    # },
+    #
+    # {
+    #     'architecture': ['inception_resnet_v2'],
+    #     'dropout_keep_prob': 0.8,
+    #     'hidden_layer1_size': 50,
+    #     'learning_rate': 0.03,
+    #     'learning_rate_decay': 0.33,
+    #     'train_batch_size': 30,
+    #     'test_accuracies': []
+    # }
 ]
 # Model settings for Hela dataset
 # MODEL_SETTINGS = [
@@ -1244,8 +1245,25 @@ def add_naive_averaging_evaluation(class_count, is_logit):
 
     return result_matrix, ground_truth_matrix, naive_averaging_eval_step, naive_averaging_prediction
 
+def cal_conf_matrix(image_lists, prediction, ground_truth):
 
-def naive_averaging_result(class_count, all_last_layer_test_results, is_logit):
+    labels = np.argmax(np.asarray(ground_truth), 1)
+    print('labels: ', labels)
+    print(image_lists.keys())
+    conf = confusion_matrix(labels, prediction, list(image_lists.keys()))
+
+    conf_norm = []
+    for row in (conf):
+        if np.sum(row) == 0:
+            conf_norm.append(row)
+        else:
+            conf_norm.append(row / np.sum(row))
+    conf_norm = np.asarray(conf_norm)
+    print('conf matrix', conf)
+    print('conf norm', conf_norm)
+    return conf_norm
+
+def naive_averaging_result(image_lists, class_count, all_last_layer_test_results, is_logit):
     average_final_results = []
     ground_truths = []
     # print(all_last_layer_test_results)
@@ -1298,7 +1316,12 @@ def naive_averaging_result(class_count, all_last_layer_test_results, is_logit):
         tf.logging.info('Final test accuracy = %.1f%% (N=%d)' %
                         (test_accuracy * 100, len(average_final_results)))
 
-    return test_accuracy * 100
+
+    print('prediction', predictions)
+    print('ground truth', ground_truths)
+
+    conf_norm = cal_conf_matrix(image_lists, predictions, ground_truths)
+    return test_accuracy * 100, conf_norm
     sess.close()
 
 
@@ -1310,6 +1333,13 @@ def save_mean_and_std_result(result_arr, name):
     result_to_save = ['', '', '', '', '', str(name), mean, std]
     save_to_csv(GENERAL_SETTING['csvlogfile'], [result_to_save])
 
+def save_avg_conf(conf_arr, name):
+    conf_arr = np.asarray(conf_arr)
+    print('conf arr shape: ', conf_arr.shape)
+    avg_conf = np.mean(conf_arr, axis=0)
+    print('avg conf: ', avg_conf)
+    result_to_save = ['', '', '', '', '', str(name), conf_arr, avg_conf]
+    save_to_csv(GENERAL_SETTING['csvlogfile'], [result_to_save])
 
 def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
@@ -1340,11 +1370,14 @@ def main(_):
     three_bases_naive_ensemble_logits_test_accuracies = []
     three_bases_naive_ensemble_softmax_test_accuracies = []
 
+    all_naive_averaging_with_logit_conf_arr =[]
+    all_naive_averaging_with_softmax_conf_arr = []
+
     # In this section, we will perform the train and test for every model: 3 base models, feature concat model,
     # naive averaging models for 3 base models, naive averaging for all (3 base models + feature concat)
     # Initialize the net randomly, doing the training, early stopping based on cross-validation performance and then perform the test.
     # Repeat the process for 30 times, calculate the average result and the variance
-    for index in range(0, 30):
+    for index in range(0, 1):
         # Choosing 2 random folds inside 10 folds and create testing and training folds
         testing_fold_names = []
         [testing_fold_index_1, testing_fold_index_2] = random.sample(range(1, 11), 2)
@@ -1420,10 +1453,10 @@ def main(_):
         ########    Ensemble training   #########
 
         # Three bases models
-        three_bases_naive_averaging_with_logit_test_accurary = naive_averaging_result(class_count=class_count,
+        three_bases_naive_averaging_with_logit_test_accurary, _ = naive_averaging_result(image_lists= image_lists, class_count=class_count,
                                                                                       all_last_layer_test_results=three_bases_last_layer_test_results,
                                                                                       is_logit=True)
-        three_bases_naive_averaging_with_softmax_test_accurary = naive_averaging_result(class_count=class_count,
+        three_bases_naive_averaging_with_softmax_test_accurary, _= naive_averaging_result(image_lists= image_lists, class_count=class_count,
                                                                                         all_last_layer_test_results=three_bases_last_layer_test_results,
                                                                                         is_logit=False)
         three_bases_naive_ensemble_logits_test_accuracies.append(three_bases_naive_averaging_with_logit_test_accurary)
@@ -1431,14 +1464,16 @@ def main(_):
             three_bases_naive_averaging_with_softmax_test_accurary)
 
         # All models
-        all_naive_averaging_with_logit_test_accurary = naive_averaging_result(class_count=class_count,
+        all_naive_averaging_with_logit_test_accurary, all_naive_averaging_with_logit_conf = naive_averaging_result(image_lists= image_lists, class_count=class_count,
                                                                               all_last_layer_test_results=all_last_layer_test_results,
                                                                               is_logit=True)
-        all_naive_averaging_with_softmax_test_accurary = naive_averaging_result(class_count=class_count,
+        all_naive_averaging_with_softmax_test_accurary, all_naive_averaging_with_softmax_conf = naive_averaging_result(image_lists= image_lists, class_count=class_count,
                                                                                 all_last_layer_test_results=all_last_layer_test_results,
                                                                                 is_logit=False)
         all_naive_ensemble_logits_test_accuracies.append(all_naive_averaging_with_logit_test_accurary)
         all_naive_ensemble_softmax_test_accuracies.append(all_naive_averaging_with_softmax_test_accurary)
+        all_naive_averaging_with_logit_conf_arr.append(all_naive_averaging_with_logit_conf)
+        all_naive_averaging_with_softmax_conf.append(all_naive_averaging_with_softmax_conf)
 
         # Print and save to file
         print("base learner testing accuracy", testing_accuracy)
@@ -1463,12 +1498,12 @@ def main(_):
         # All
         all_naive_averaging_with_logit_result = ['', datetime.now(), '', '', '', '',
                                                  'all_naive_averaging_with_logit_test_accuracy',
-                                                 all_naive_averaging_with_logit_test_accurary * 100]
+                                                 all_naive_averaging_with_logit_test_accurary * 100, all_naive_averaging_with_logit_conf]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [all_naive_averaging_with_logit_result])
 
         all_naive_averaging_with_softmax_result = ['', datetime.now(), '', '', '', '',
                                                    'all_naive_averaging_with_softmax_test_accuracy',
-                                                   all_naive_averaging_with_softmax_test_accurary * 100]
+                                                   all_naive_averaging_with_softmax_test_accurary * 100, all_naive_averaging_with_softmax_conf]
         save_to_csv(GENERAL_SETTING['csvlogfile'], [all_naive_averaging_with_softmax_result])
 
     # Calculate Mean and stddev of performance over 30 testing times. Save to file
@@ -1476,7 +1511,9 @@ def main(_):
     save_mean_and_std_result(three_bases_naive_ensemble_logits_test_accuracies, 'three bases ensemble logit')
 
     save_mean_and_std_result(all_naive_ensemble_softmax_test_accuracies, 'all ensemble softmax')
+    save_avg_conf(all_naive_averaging_with_softmax_conf_arr, 'all_ensemble_softmax')
     save_mean_and_std_result(all_naive_ensemble_logits_test_accuracies, 'all ensemble logit')
+    save_avg_conf(all_naive_averaging_with_logit_conf_arr, 'all_ensemble_logit')
 
     for MODEL_SETTING in MODEL_SETTINGS:
         save_mean_and_std_result(MODEL_SETTING['test_accuracies'], str(MODEL_SETTING['architecture']))
