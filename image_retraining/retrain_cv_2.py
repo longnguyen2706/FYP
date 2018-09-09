@@ -27,8 +27,8 @@ FLAGS = None
 ############## Provide the model that you want to train here ##############
 
 # ARCHITECTURES = ['inception_v3', 'mobilenet_1.0_224', 'resnet_v2']
-ARCHITECTURES = ['resnet_v2']
-#ARCHITECTURES = ['inception_resnet_v2']
+# ARCHITECTURES = ['resnet_v2']
+ARCHITECTURES = ['inception_resnet_v2']
 #ARCHITECTURES = ['resnet50']
 
 

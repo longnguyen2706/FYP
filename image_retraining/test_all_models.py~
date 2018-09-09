@@ -50,7 +50,7 @@ GENERAL_SETTING = {
     'validation_batch_size': -1, # In every validation step, all images in the validation set are used to validate the model performance
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    'image_dir': '/home/duclong002/Dataset/JPEG_data/Hep_JPEG/', # !Important: set the dataset directory
+    'image_dir': '/home/duclong002/data_conversion/JPEG_data/Hep_JPEG/', # !Important: set the dataset directory
     #'image_dir': '/home/duclong002/data_conversion/JPEG_data/Hela_JPEG/',
     'summaries_dir': summaries_directory
 }
