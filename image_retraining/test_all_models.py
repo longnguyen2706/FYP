@@ -1422,7 +1422,7 @@ def main(_):
     # naive averaging models for 3 base models, naive averaging for all (3 base models + feature concat)
     # Initialize the net randomly, doing the training, early stopping based on cross-validation performance and then perform the test.
     # Repeat the process for 30 times, calculate the average result and the variance
-    for index in range(0, 1):
+    for index in range(0, 30):
         # Choosing 2 random folds inside 10 folds and create testing and training folds
         testing_fold_names = []
         [testing_fold_index_1, testing_fold_index_2] = random.sample(range(1, 11), 2)
