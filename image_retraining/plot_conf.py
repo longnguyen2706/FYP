@@ -33,8 +33,8 @@ def plot_confusion_matrix(cm, classes,
         plt.text(j, i, format(cm[i, j], fmt),
                  horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
-
-    plt.tight_layout()
+    plt.gcf().subplots_adjust(bottom=0.15)
+    # plt.tight_layout()
     plt.ylabel('Predicted label')
     plt.xlabel('True label')
 
@@ -43,18 +43,18 @@ def plot_confusion_matrix(cm, classes,
 # cm = np.asarray(cm)
 # class_names = ['lysosome', 'microtubules', 'golgi gpp', 'nucleus', 'golgi gia', 'endosome', 'er', 'nucleolus', 'mitochondria', 'actinfilaments']
 
-#
-# cm = [[9.66871323e-01, 3.31286766e-02, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
+# Hep CNN
+# unsorted_cm = [[9.66871323e-01, 3.31286766e-02, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
 #       [0.00000000e+00, 9.69182351e-01, 2.26564611e-02, 0.00000000e+00,0.00000000e+00, 8.16118837e-03],
 #       [0.00000000e+00, 2.83669553e-02, 9.02972593e-01, 5.08108570e-02,1.35998312e-02, 4.24976317e-03],
 #       [0.00000000e+00, 1.58426836e-03, 3.94995606e-02, 9.48603044e-01,3.14178877e-03, 7.17133853e-03],
 #       [0.00000000e+00, 9.13242009e-04, 7.19074023e-03, 7.97064646e-03,9.73654158e-01, 1.02712136e-02],
 #       [2.74074074e-03, 5.17976513e-03, 2.89537182e-03, 1.10897524e-02,1.18646769e-02, 9.66229693e-01]]
-# cm = np.asarray(cm)
+# unsorted_cm = np.asarray(unsorted_cm)
 # class_names = ['cytoplasmatic', 'coarse speckled', 'fine speckled', 'homogeneous', 'centromere', 'nucleolar']
-#
 
 
+# Hela CNN
 unsorted_cm = [[0.99457215, 0., 0., 0., 0., 0., 0.00542785, 0., 0., 0., ],
                [0.02665258, 0.9350808,  0.,         0.,         0.,         0.,0.,         0.01575787, 0.02250875, 0.        ],
                [0.,         0.,         1.,         0.,         0.,         0.,0.,         0.,         0.,         0.        ],
@@ -67,6 +67,7 @@ unsorted_cm = [[0.99457215, 0., 0., 0., 0., 0., 0.00542785, 0., 0., 0., ],
                [0.,         0.00805676, 0.,         0.,         0.,         0.,0.,         0.09852115, 0.02050887, 0.87291322]]
 unsorted_cm = np.asarray(unsorted_cm)
 class_names = ['dna', 'er', 'actinfilaments', 'nucleolus', 'golgi gpp', 'microtubules', 'golgi gia', 'endosome', 'mitochondria', 'lysosome']
+
 
 dict = []
 for i in range (0, len(unsorted_cm)):
@@ -100,6 +101,36 @@ sorted_cm = np.asarray(sorted_cm)
 print(sorted_cm)
 print(sorted_class_names)
 print(sorted_labels)
+
 plt.figure()
 plot_confusion_matrix(sorted_cm, sorted_class_names)
 plt.show()
+
+# Hela CBM
+# sorted_cm = [[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+#                [0.0, 1.0,  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+#                [0.0, 0.05, 0.89, 0.0, 0.0, 0.0, 0.06, 0.0, 0.0, 0.0],
+#                [0.0, 0.05, 0.06, 0.89, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+#                [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+#                [0.0, 0.0, 0.0, 0.0, 0.06, 0.94, 0.0, 0.0, 0.0, 0.0],
+#                [0.0, 0.0, 0.06, 0.0, 0.0, 0.0, 0.88, 0.0, 0.0, 0.06],
+#                [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+#                [0.0, 0.0, 0.07, 0.13, 0.0, 0.0, 0.0, 0.0, 0.80, 0.0],
+#                [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]]
+# sorted_cm = np.asarray(sorted_cm)
+# sorted_class_names = ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10']
+#
+#
+# # # Hep CBM
+# # sorted_cm = [[0.97, 0.01, 0.0, 0.0, 0.02, 0.0],
+# #              [0.05, 0.95, 0.0, 0.0, 0.0, 0.0],
+# #              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+# #              [0.05, 0.05, 0.0, 0.76, 0.12, 0.02],
+# #              [0.0, 0.0, 0.0, 0.02, 0.98, 0.0],
+# #              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0]]
+# # sorted_class_names = ['C1', 'C2', 'C3', 'C4', 'C5', 'C6']
+# # sorted_cm = np.asarray(sorted_cm)
+#
+# plt.figure()
+# plot_confusion_matrix(sorted_cm, sorted_class_names)
+# plt.show()
