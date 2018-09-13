@@ -25,9 +25,9 @@ from sklearn.metrics import confusion_matrix
 ################## General Setting #####################
 # This section is to set the general setting for all models, i.e.: log file dir, summary dir, image dir ...
 # Set where to write the csv file to. The file contains the printout of model performance every few thousands steps
-csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_4_" + "Hep_" + str(datetime.now()).replace(" ", "-") + ".csv"
+csv_log_directory = '/home/duclong002/retrain_logs/logfile/' + "test_" + "ensemble_4_" + "Hela_" + str(datetime.now()).replace(" ", "-") + ".csv"
 # Set where to write the summary file to. The file contains the model logs in graph form  which can be visualized by tensorboard
-summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_4_" + "Hep_" + str(datetime.now()).replace(" ", "-") + ".csv"
+summaries_directory = '/home/duclong002/retrain_logs/ensemble/' + "test_" + "ensemble_4_" + "Hela_" + str(datetime.now()).replace(" ", "-") + ".csv"
 
 GENERAL_SETTING = {
     'bottleneck_dir': '/tmp/bottleneck',
@@ -48,7 +48,7 @@ GENERAL_SETTING = {
     'validation_batch_size': -1, # In every validation step, all images in the validation set are used to validate the model performance
     'csvlogfile': csv_log_directory,
     'how_many_training_steps': 10000,
-    'image_dir': '/home/duclong002/Dataset/JPEG_data/Hep_JPEG/', # !Important: set the dataset directory
+    'image_dir': '/home/duclong002/Dataset/JPEG_data/Hela_JPEG/', # !Important: set the dataset directory
     #'image_dir': '/home/duclong002/data_conversion/JPEG_data/Hela_JPEG/',
     'summaries_dir': summaries_directory
 }
@@ -56,49 +56,49 @@ GENERAL_SETTING = {
 ###################### Model Setting #######################
 # This section set the best hyper-parameter for each model based on the recorded performance during the grid test
 # Model settings for Hep
-MODEL_SETTINGS = [
-    {
-        'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'], # feature concat model
-        'dropout_keep_prob': 0.7,
-        'hidden_layer1_size': 200,
-        'learning_rate': 0.1,
-        'learning_rate_decay': 0.66,
-        'train_batch_size': 50,
-        'test_accuracies': []
-    },
-
-    {
-        'architecture': ['inception_v3'],
-        'dropout_keep_prob': 0.7,
-        'hidden_layer1_size': 150,
-        'learning_rate': 0.1,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
-        'test_accuracies': []
-
-    },
-
-    {
-        'architecture': ['resnet_v2'],
-        'dropout_keep_prob': 0.7,
-        'hidden_layer1_size': 150,
-        'learning_rate': 0.05,
-        'learning_rate_decay': 0.66,
-        'train_batch_size': 30,
-        'test_accuracies': []
-    },
-
-    {
-        'architecture': ['inception_resnet_v2'],
-        'dropout_keep_prob': 0.8,
-        'hidden_layer1_size': 50,
-        'learning_rate': 0.03,
-        'learning_rate_decay': 0.33,
-        'train_batch_size': 30,
-        'test_accuracies': []
-    }
-
-]
+# MODEL_SETTINGS = [
+#     {
+#         'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'], # feature concat model
+#         'dropout_keep_prob': 0.7,
+#         'hidden_layer1_size': 200,
+#         'learning_rate': 0.1,
+#         'learning_rate_decay': 0.66,
+#         'train_batch_size': 50,
+#         'test_accuracies': []
+#     },
+#
+#     {
+#         'architecture': ['inception_v3'],
+#         'dropout_keep_prob': 0.7,
+#         'hidden_layer1_size': 150,
+#         'learning_rate': 0.1,
+#         'learning_rate_decay': 0.33,
+#         'train_batch_size': 30,
+#         'test_accuracies': []
+#
+#     },
+#
+#     {
+#         'architecture': ['resnet_v2'],
+#         'dropout_keep_prob': 0.7,
+#         'hidden_layer1_size': 150,
+#         'learning_rate': 0.05,
+#         'learning_rate_decay': 0.66,
+#         'train_batch_size': 30,
+#         'test_accuracies': []
+#     },
+#
+#     {
+#         'architecture': ['inception_resnet_v2'],
+#         'dropout_keep_prob': 0.8,
+#         'hidden_layer1_size': 50,
+#         'learning_rate': 0.03,
+#         'learning_rate_decay': 0.33,
+#         'train_batch_size': 30,
+#         'test_accuracies': []
+#     }
+#
+# ]
 
 # Model settings for PAP_smear dataset
 # MODEL_SETTINGS = [
@@ -147,48 +147,48 @@ MODEL_SETTINGS = [
 
 
 # Model settings for Hela dataset
-# MODEL_SETTINGS = [
-#     {
-#         'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'], # feature concat model
-#         'dropout_keep_prob': 0.7,
-#         'hidden_layer1_size': 50,
-#         'learning_rate': 0.075,
-#         'learning_rate_decay': 0.5,
-#         'train_batch_size': 30,
-#         'test_accuracies': []
-#     },
-#
-#     {
-#         'architecture': ['inception_v3'],
-#         'dropout_keep_prob': 0.6,
-#         'hidden_layer1_size': 50,
-#         'learning_rate': 0.075,
-#         'learning_rate_decay': 0.5,
-#         'train_batch_size': 50,
-#         'test_accuracies': []
-#     },
-#
-#     {
-#         'architecture': ['resnet_v2'],
-#         'dropout_keep_prob': 0.7,
-#         'hidden_layer1_size': 50,
-#         'learning_rate': 0.1,
-#         'learning_rate_decay': 0.5,
-#         'train_batch_size': 50,
-#         'test_accuracies': []
-#     },
-#
-#     {
-#         'architecture': ['inception_resnet_v2'],
-#         'dropout_keep_prob': 0.6,
-#         'hidden_layer1_size': 50,
-#         'learning_rate': 0.1,
-#         'learning_rate_decay': 0.33,
-#         'train_batch_size': 100,
-#         'test_accuracies': []
-#     },
-#
-# ]
+MODEL_SETTINGS = [
+    {
+        'architecture': ['resnet_v2', 'inception_v3', 'inception_resnet_v2'], # feature concat model
+        'dropout_keep_prob': 0.7,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.075,
+        'learning_rate_decay': 0.5,
+        'train_batch_size': 30,
+        'test_accuracies': []
+    },
+
+    {
+        'architecture': ['inception_v3'],
+        'dropout_keep_prob': 0.6,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.075,
+        'learning_rate_decay': 0.5,
+        'train_batch_size': 50,
+        'test_accuracies': []
+    },
+
+    {
+        'architecture': ['resnet_v2'],
+        'dropout_keep_prob': 0.7,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.1,
+        'learning_rate_decay': 0.5,
+        'train_batch_size': 50,
+        'test_accuracies': []
+    },
+
+    {
+        'architecture': ['inception_resnet_v2'],
+        'dropout_keep_prob': 0.6,
+        'hidden_layer1_size': 50,
+        'learning_rate': 0.1,
+        'learning_rate_decay': 0.33,
+        'train_batch_size': 100,
+        'test_accuracies': []
+    },
+
+]
 
 # These are all parameters that are tied to the particular model architecture
 # we're using for Inception v3. These include things like tensor names and their
