@@ -1,11 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import operator
 
 import itertools
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
                           title='Confusion matrix',
-                          cmap=plt.cm.Blues):
+                          cmap=plt.cm.Greys):
     """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
@@ -20,7 +21,7 @@ def plot_confusion_matrix(cm, classes,
 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
-    plt.colorbar()
+    # plt.colorbar()
     tick_marks = np.arange(len(classes))
     plt.xticks(tick_marks, classes, rotation=45)
     plt.yticks(tick_marks, classes)
@@ -42,6 +43,7 @@ def plot_confusion_matrix(cm, classes,
 # cm = np.asarray(cm)
 # class_names = ['lysosome', 'microtubules', 'golgi gpp', 'nucleus', 'golgi gia', 'endosome', 'er', 'nucleolus', 'mitochondria', 'actinfilaments']
 
+#
 # cm = [[9.66871323e-01, 3.31286766e-02, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00],
 #       [0.00000000e+00, 9.69182351e-01, 2.26564611e-02, 0.00000000e+00,0.00000000e+00, 8.16118837e-03],
 #       [0.00000000e+00, 2.83669553e-02, 9.02972593e-01, 5.08108570e-02,1.35998312e-02, 4.24976317e-03],
@@ -50,19 +52,54 @@ def plot_confusion_matrix(cm, classes,
 #       [2.74074074e-03, 5.17976513e-03, 2.89537182e-03, 1.10897524e-02,1.18646769e-02, 9.66229693e-01]]
 # cm = np.asarray(cm)
 # class_names = ['cytoplasmatic', 'coarse speckled', 'fine speckled', 'homogeneous', 'centromere', 'nucleolar']
+#
 
-cm = [[0.99457215, 0.,         0.,         0.,         0.,         0.,0.00542785, 0.,         0.,        0.,        ],
- [0.02665258, 0.9350808,  0.,         0.,         0.,         0.,0.,         0.01575787, 0.02250875, 0.        ],
- [0.,         0.,         1.,         0.,         0.,         0.,0.,         0.,         0.,         0.        ],
- [0.,         0.,         0.,         0.99570707, 0.,         0.,  0.00429293, 0.,         0.,         0.        ],
- [0.,         0.00474334, 0.,         0.,         0.86694019, 0.,0.11547079, 0.00638889, 0.00645679, 0.        ],
- [0.,         0.01745976, 0.01122211, 0.,         0.,         0.97131813,0.,         0.,         0.,         0.        ],
- [0.,         0.,         0.,         0.,         0.02146309, 0.,0.97853691, 0.,         0.,         0.        ],
- [0.,         0.06281828, 0.,         0.,         0.,         0.,0.,         0.83832072, 0.00727395, 0.09158705],
- [0.,         0.05172419, 0.,         0.,         0.,         0.,0.,         0.02074346, 0.92753235, 0.        ],
- [0.,         0.00805676, 0.,         0.,         0.,         0.,0.,         0.09852115, 0.02050887, 0.87291322]]
-cm = np.asarray(cm)
-class_names = ['nucleus', 'er', 'actinfilaments', 'nucleolus', 'golgi gpp', 'microtubules', 'golgi gia', 'endosome', 'mitochondria', 'lysosome']
+
+unsorted_cm = [[0.99457215, 0., 0., 0., 0., 0., 0.00542785, 0., 0., 0., ],
+               [0.02665258, 0.9350808,  0.,         0.,         0.,         0.,0.,         0.01575787, 0.02250875, 0.        ],
+               [0.,         0.,         1.,         0.,         0.,         0.,0.,         0.,         0.,         0.        ],
+               [0.,         0.,         0.,         0.99570707, 0.,         0.,  0.00429293, 0.,         0.,         0.        ],
+               [0.,         0.00474334, 0.,         0.,         0.86694019, 0.,0.11547079, 0.00638889, 0.00645679, 0.        ],
+               [0.,         0.01745976, 0.01122211, 0.,         0.,         0.97131813,0.,         0.,         0.,         0.        ],
+               [0.,         0.,         0.,         0.,         0.02146309, 0.,0.97853691, 0.,         0.,         0.        ],
+               [0.,         0.06281828, 0.,         0.,         0.,         0.,0.,         0.83832072, 0.00727395, 0.09158705],
+               [0.,         0.05172419, 0.,         0.,         0.,         0.,0.,         0.02074346, 0.92753235, 0.        ],
+               [0.,         0.00805676, 0.,         0.,         0.,         0.,0.,         0.09852115, 0.02050887, 0.87291322]]
+unsorted_cm = np.asarray(unsorted_cm)
+class_names = ['dna', 'er', 'actinfilaments', 'nucleolus', 'golgi gpp', 'microtubules', 'golgi gia', 'endosome', 'mitochondria', 'lysosome']
+
+dict = []
+for i in range (0, len(unsorted_cm)):
+    cm_i = unsorted_cm[i]
+    conf_dict = []
+    for j in range(0, len(cm_i)):
+        conf_dict.append({'ele': cm_i[j], 'label': class_names[j]})
+    print(conf_dict)
+    conf_dict.sort(key=operator.itemgetter('label'))
+    print('sorted conf dict')
+    print(conf_dict)
+
+    conf_arr =[]
+    for item in conf_dict:
+        conf_arr.append(item['ele'])
+    class_name = class_names[i]
+    dict.append({'label': class_name, 'conf_arr': conf_arr})
+print (dict)
+dict.sort(key=operator.itemgetter('label'))
+print('sorted dict')
+print(dict)
+
+sorted_cm = []
+sorted_class_names = []
+sorted_labels = []
+for i, item in enumerate(dict):
+    sorted_cm.append(item['conf_arr'])
+    sorted_labels.append(item['label'])
+    sorted_class_names.append("C"+str(i+1))
+sorted_cm = np.asarray(sorted_cm)
+print(sorted_cm)
+print(sorted_class_names)
+print(sorted_labels)
 plt.figure()
-plot_confusion_matrix(cm, class_names)
+plot_confusion_matrix(sorted_cm, sorted_class_names)
 plt.show()
