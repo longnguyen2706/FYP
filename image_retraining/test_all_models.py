@@ -1382,6 +1382,14 @@ def save_avg_conf(conf_arr, name, image_lists):
     conf_arr = np.asarray(conf_arr)
     print('conf arr shape: ', conf_arr.shape)
     avg_conf = np.mean(conf_arr, axis=0)
+
+    import pickle
+    try:
+        with open('/home/duclong002/Desktop/Hela_conf.pickle', 'wb') as fp:
+            pickle.dump(avg_conf, fp)
+    except IOError:
+        print('An error occured trying to read the file.')
+
     print('avg conf: ', avg_conf)
     result_to_save = ['', '', '', '', '', str(name), conf_arr, avg_conf, image_lists.keys()]
     save_to_csv(GENERAL_SETTING['csvlogfile'], [result_to_save])
