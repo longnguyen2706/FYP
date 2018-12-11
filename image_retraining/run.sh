@@ -19,12 +19,12 @@ done
 
 # Setting hyper param array. The script will loop through each array and do the training with such parameter.
 # You should calculate how many cases that will be executed and don't try too large number.
-learning_rate_arr=(0.1 0.01 0.001) # set the learning rate value
+learning_rate_arr=(0.1 0.075 0.05 0.03 ) # set the learning rate value
 how_many_training_steps=10000   # set the maximum training steps before terminate
 testing_percentage_arr=(10) # set how much percentage of the original data is for testing
 validation_percentage_arr=(10)  # set how much percentage of the original data is for validation
-train_batch_size_arr=(50 150)   # set the minibatch size
-hidden_layer1_size_arr=(50  200) # set numnber of neuron in the hidden layer
+train_batch_size_arr=(50 100)   # set the minibatch size
+hidden_layer1_size_arr=(50 100 200) # set numnber of neuron in the hidden layer
 dropout_keep_prob_arr=(0.7 0.8) # set the keep prob of the dropout
 
 #learning_rate_arr=(0.1 0.05)

@@ -9,7 +9,7 @@ HOME_DIR="/home/duclong002/" # provide your home directory
 JPEG_DATA_DIR=$HOME_DIR"Dataset/JPEG_data/" # provide your dataset directory
 CODE_DIR=$HOME_DIR"FYP_clone/FYP/image_retraining/" # provide where your retrain.py is. If you not refactor the code, please don't change it
 #DATASET_NAME=("BreastCancerCell_JPEG" "CHO_JPEG" "Hela_JPEG")
-DATASET_NAME=("Hep_JPEG") # provide the dataset name to look for
+DATASET_NAME=("PAP_smear_JPEG") # provide the dataset name to look for
 
 # print out name of the datasets will be used
 echo "The program will do training on these dataset:"
@@ -20,7 +20,7 @@ done
 
 # Setting hyper param array. The script will loop through each array and do the training with such parameter.
 # You should calculate how many cases that will be executed and don't try too large number.
-learning_rate_arr=(0.05 0.1) #(0.2) #0.075  # set the learning rate value
+learning_rate_arr=(0.03 0.05 0.075 0.1) #(0.2) #0.075  # set the learning rate value
 how_many_training_steps=10000 # set the maximum training steps before terminate
 testing_percentage_arr=(20) # set how much percentage of the original data is for testing
 train_batch_size_arr=(30 50 100) # set how much percentage of the original data is for validation

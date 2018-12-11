@@ -26,8 +26,8 @@ FLAGS = None
 #ARCHITECTURES = ['mobilenet_1.0_128']
 #ARCHITECTURES = ['inception_v3']
 #ARCHITECTURES = ['resnet_v2']
-# ARCHITECTURES = ['resnet_v2','inception_v3','inception_resnet_v2']
-ARCHITECTURES = ['inception_resnet_v2']
+ARCHITECTURES = ['resnet_v2','inception_v3']
+# ARCHITECTURES = ['inception_resnet_v2']
 # ARCHITECTURES = ['resnet_v2','inception_v3']
 
 # These are all parameters that are tied to the particular model architecture
